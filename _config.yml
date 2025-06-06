@@ -1,54 +1,74 @@
 # Site settings
-title: Ritika Lamba's Homepage
-description: "LLM-focused ML Engineer with a strong foundation in scalable AI infrastructure, fairness, and interpretability."
+[cite_start]title: Ritika Lamba's Homepage [cite: 4]
+[cite_start]description: "LLM-focused ML Engineer with a strong foundation in scalable AI infrastructure, fairness, and interpretability. Industry-proven experience building distributed systems at Volkswagen IT, paired with academic research in explainable AI, LORA-based LLM optimization, and symbolic reasoning. Passionate about deploying efficient, trustworthy, and human-aligned intelligence at scale." [cite: 1, 2, 3]
 
 # The subpath of your site, e.g. /blog
 baseurl: ""
 
 # The base hostname & protocol for your site, e.g. http://example.com
-url: "https://rxl895.github.io" # CHANGE THIS to your GitHub Pages URL
+url: "https://rxl895.github.io" # IMPORTANT: Ensure this matches your exact GitHub Pages URL
 
 # Build settings
 markdown: kramdown
-remote_theme: academicpages/academicpages.github.io@main
+# This line is crucial for GitHub Pages to find your theme.
+# It tells Jekyll to use YOUR repository as the theme source.
+remote_theme: rxl895/rxl895.github.io
 
+# Plugins for Jekyll functionality
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-paginate
+  # You might not need all these if they are already included with the base theme,
+  # but listing them explicitly helps ensure they are loaded.
 
-# Pagination
+# Pagination settings (for blog posts, if you add them later)
 paginate: 10 # amount of posts to show
 paginate_path: /page:num/
 
 # Analytics
-# If you want to use Google Analytics, add your GA tracking ID below
+# If you want to use Google Analytics, uncomment the line below and add your GA tracking ID
 # google_analytics: UA-XXXXXXXXX-X
 
-# Author information (used for sidebar)
+# Author information (used for sidebar across all pages)
 author:
-  name: Ritika Lamba
-  avatar: Profile_Pic.png # Path to your profile image
-  bio: MS Student <br> Case Western Reserve University (CWRU)
-  email: ritikalamba@hotmail.com
-  linkedin: ritika-lamba
-  # twitter: YourTwitterHandle # Uncomment and add if you have Twitter
-  # github: YourGitHubHandle # Uncomment and add if you have GitHub
-  # scholar: YourGoogleScholarID # Uncomment and add if you have Google Scholar
+  [cite_start]name: Ritika Lamba [cite: 1]
+  avatar: Profile_Pic.png # Path to your profile image. Ensure it's in the 'images/' folder.
+  [cite_start]bio: MS Student <br> Case Western Reserve University (CWRU) [cite: 4]
+  [cite_start]email: ritikalamba@hotmail.com [cite: 1]
+  # Social links - Uncomment and fill in if you have them.
+  # These are used for the sidebar links and potentially SEO.
+  [cite_start]linkedin: ritika-lamba [cite: 1]
+  # twitter: YourTwitterHandle
+  # github: YourGitHubHandle # Replace 'YourGitHubHandle' with your actual GitHub username if you want to link it
+  # scholar: YourGoogleScholarID # Replace 'YourGoogleScholarID' with your Google Scholar ID if you have one
 
-# Footer
+# Footer links (optional, appears at the bottom of pages)
 footer:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
-      url: "mailto:ritikalamba@hotmail.com"
+      [cite_start]url: "mailto:ritikalamba@hotmail.com" [cite: 1]
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/ritika-lamba"
-    # - label: "Twitter" # Uncomment and add if you have Twitter
+      [cite_start]url: "https://www.linkedin.com/in/ritika-lamba" [cite: 1]
+    # - label: "Twitter"
     #   icon: "fab fa-fw fa-twitter-square"
     #   url: "https://twitter.com/YourTwitterHandle"
-    # - label: "GitHub" # Uncomment and add if you have GitHub
+    # - label: "GitHub"
     #   icon: "fab fa-fw fa-github"
     #   url: "https://github.com/YourGitHubHandle"
+
+# Exclude from processing (files/folders Jekyll should ignore)
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
