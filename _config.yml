@@ -1,6 +1,6 @@
 # Site settings
-[cite_start]title: Ritika Lamba's Homepage [cite: 4]
-[cite_start]description: "LLM-focused ML Engineer with a strong foundation in scalable AI infrastructure, fairness, and interpretability. Industry-proven experience building distributed systems at Volkswagen IT, paired with academic research in explainable AI, LORA-based LLM optimization, and symbolic reasoning. Passionate about deploying efficient, trustworthy, and human-aligned intelligence at scale." [cite: 1, 2, 3]
+title: Ritika Lamba's Homepage
+description: "LLM-focused ML Engineer with a strong foundation in scalable AI infrastructure, fairness, and interpretability. Industry-proven experience building distributed systems at Volkswagen IT, paired with academic research in explainable AI, LORA-based LLM optimization, and symbolic reasoning. Passionate about deploying efficient, trustworthy, and human-aligned intelligence at scale."
 
 # The subpath of your site, e.g. /blog
 baseurl: ""
@@ -33,13 +33,13 @@ paginate_path: /page:num/
 
 # Author information (used for sidebar across all pages)
 author:
-  [cite_start]name: Ritika Lamba [cite: 1]
+  name: Ritika Lamba
   avatar: Profile_Pic.png # Path to your profile image. Ensure it's in the 'images/' folder.
-  [cite_start]bio: MS Student <br> Case Western Reserve University (CWRU) [cite: 4]
-  [cite_start]email: ritikalamba@hotmail.com [cite: 1]
+  bio: MS Student <br> Case Western Reserve University (CWRU)
+  email: ritikalamba@hotmail.com
   # Social links - Uncomment and fill in if you have them.
   # These are used for the sidebar links and potentially SEO.
-  [cite_start]linkedin: ritika-lamba [cite: 1]
+  linkedin: ritika-lamba
   # twitter: YourTwitterHandle
   # github: YourGitHubHandle # Replace 'YourGitHubHandle' with your actual GitHub username if you want to link it
   # scholar: YourGoogleScholarID # Replace 'YourGoogleScholarID' with your Google Scholar ID if you have one
@@ -49,10 +49,10 @@ footer:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
-      [cite_start]url: "mailto:ritikalamba@hotmail.com" [cite: 1]
+      url: "mailto:ritikalamba@hotmail.com"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      [cite_start]url: "https://www.linkedin.com/in/ritika-lamba" [cite: 1]
+      url: "https://www.linkedin.com/in/ritika-lamba"
     # - label: "Twitter"
     #   icon: "fab fa-fw fa-twitter-square"
     #   url: "https://twitter.com/YourTwitterHandle"
