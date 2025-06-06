@@ -10,7 +10,7 @@ url: "https://rxl895.github.io" # CHANGE THIS to your GitHub Pages URL
 
 # Build settings
 markdown: kramdown
-remote_theme: academicpages/academicpages.github.io@4.2.1
+remote_theme: academicpages/academicpages.github.io@main
 
 plugins:
   - jekyll-feed
