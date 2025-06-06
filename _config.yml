@@ -1,0 +1,54 @@
+# Site settings
+title: Ritika Lamba's Homepage
+description: "LLM-focused ML Engineer with a strong foundation in scalable AI infrastructure, fairness, and interpretability."
+
+# The subpath of your site, e.g. /blog
+baseurl: ""
+
+# The base hostname & protocol for your site, e.g. http://example.com
+url: "https://rxl895.github.io" # CHANGE THIS to your GitHub Pages URL
+
+# Build settings
+markdown: kramdown
+remote_theme: academicpages/academicpages.github.io@4.2.1
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-paginate
+
+# Pagination
+paginate: 10 # amount of posts to show
+paginate_path: /page:num/
+
+# Analytics
+# If you want to use Google Analytics, add your GA tracking ID below
+# google_analytics: UA-XXXXXXXXX-X
+
+# Author information (used for sidebar)
+author:
+  name: Ritika Lamba
+  avatar: Profile_Pic.png # Path to your profile image
+  bio: MS Student <br> Case Western Reserve University (CWRU)
+  email: ritikalamba@hotmail.com
+  linkedin: ritika-lamba
+  # twitter: YourTwitterHandle # Uncomment and add if you have Twitter
+  # github: YourGitHubHandle # Uncomment and add if you have GitHub
+  # scholar: YourGoogleScholarID # Uncomment and add if you have Google Scholar
+
+# Footer
+footer:
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:ritikalamba@hotmail.com"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/ritika-lamba"
+    # - label: "Twitter" # Uncomment and add if you have Twitter
+    #   icon: "fab fa-fw fa-twitter-square"
+    #   url: "https://twitter.com/YourTwitterHandle"
+    # - label: "GitHub" # Uncomment and add if you have GitHub
+    #   icon: "fab fa-fw fa-github"
+    #   url: "https://github.com/YourGitHubHandle"
