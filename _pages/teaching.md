@@ -9,7 +9,7 @@ author_profile: true
 <div class="sidebar sticky">
 <div itemscope="" itemtype="http://schema.org/Person">
 <div class="author__avatar">
-<img alt="Ritika Lamba" class="author__avatar" src="./Profile_Pic.png"/>
+<img alt="Ritika Lamba" class="author__avatar" src="./images/Profile_Pic.png"/>
 </div>
 <div class="author__content">
 <h3 class="author__name">Ritika Lamba</h3>

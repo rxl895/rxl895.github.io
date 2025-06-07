@@ -11,7 +11,7 @@ repository               : "rxl895/rxl895.github.io"
 
 # Author Sidebar Info
 author:
-  avatar           : "images/Profile_Pic.png"
+  avatar           : "/images/Profile_Pic.png"
   name             : "Ritika Lamba"
   bio              : "MS Student at Case Western Reserve University (CWRU)"
   email            : "ritikalamba@hotmail.com"
