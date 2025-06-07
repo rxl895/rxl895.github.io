@@ -1,0 +1,21 @@
+main:
+  - title: "Home"
+    url: /
+
+  - title: "Publications"
+    url: /publications/
+
+  - title: "Teaching"
+    url: /teaching/
+
+  - title: "Awards"
+    url: /awards/
+
+  - title: "Experience"
+    url: /experience/
+
+  - title: "Service"
+    url: /service/
+
+  - title: "Students"
+    url: /students/
