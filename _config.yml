@@ -48,7 +48,7 @@ social:
 analytics:
   provider               : false
 
-# Content Collections
+# Content Collections (Only Teaching & Publications)
 collections:
   teaching:
     output: true
