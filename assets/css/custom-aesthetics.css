@@ -1,8 +1,12 @@
 /* ==========================================================================
    CUSTOM AESTHETIC ENHANCEMENTS
    Enhanced by GitHub Copilot for modern, beautiful styling
-   Updated: July 18, 2025 - Cache refresh
+   Updated: July 18, 2025 - Cache refresh v2.0
+   Build timestamp: {{ site.time }}
    ========================================================================== */
+
+/* FORCE CACHE REFRESH - DO NOT REMOVE */
+/* Version: 2.0.{{ site.time | date: '%s' }} */
 
 /* Import Google Fonts for better typography */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
