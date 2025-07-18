@@ -2,31 +2,11 @@
 layout: home
 title: "Ritika Lamba"
 permalink: /
+author_profile: true
 ---
 
 <div class="sidebar sticky">
-
-<div itemscope itemtype="http://schema.org/Person">
-
-  <div class="author__avatar">
-    <img src="images/Profile_Pic.png" class="author__avatar" alt="Ritika Lamba">
-  </div>
-
-  <div class="author__content">
-    <h3 class="author__name">Ritika Lamba</h3>
-    <p class="author__bio">MS Student <br> Case Western Reserve University (CWRU)</p>
-  </div>
-
-  <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
-    <ul class="author__urls social-icons">
-      <li><a href="https://www.linkedin.com/in/ritika-lamba"><i class="fab fa-fw fa-linkedin"></i> LinkedIn</a></li>
-      <li><a href="mailto:ritikalamba@hotmail.com"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a></li>
-    </ul>
-  </div>
-
-</div>
-
+  {% include author-profile.html %}
 </div>
 
 <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
@@ -39,22 +19,45 @@ permalink: /
     <section class="page__content" itemprop="text">
       <p>I am an LLM-focused ML Engineer with a strong foundation in scalable AI infrastructure, fairness, and interpretability. I have industry-proven experience building distributed systems at Volkswagen IT, paired with academic research in explainable AI, LORA-based LLM optimization, and symbolic reasoning. I am passionate about deploying efficient, trustworthy, and human-aligned intelligence at scale.</p>
 
-      <p><b>Research Interest</b>: I am broadly interested in:
-      <ul>
-        <li>Automated reasoning, large language models (LLMs), trustworthy AI, explainable AI (ΧΑΙ)</li>
-        <li>Symbolic and statistical interpretability, counterfactual explanations</li>
-        <li>Fairness in AI, static and program analysis, SMT-based verification, program synthesis</li>
-        <li>Causal reasoning, NLP emotion tagging, and multi-label consistency evaluation</li>
-      </ul>
-      </p>
+      <div class="research-interests">
+        <p><strong>Research Interests</strong>: I am broadly interested in:</p>
+        <ul>
+          <li>Automated reasoning, large language models (LLMs), trustworthy AI, explainable AI (ΧΑΙ)</li>
+          <li>Symbolic and statistical interpretability, counterfactual explanations</li>
+          <li>Fairness in AI, static and program analysis, SMT-based verification, program synthesis</li>
+          <li>Causal reasoning, NLP emotion tagging, and multi-label consistency evaluation</li>
+        </ul>
+      </div>
 
-      <h1 id="news">News</h1>
-      <ul>
-        <li>Conducted research with Dr. Jing Ma on logic-based explanations using GNNs for symbolic counterfactuals.</li>
-        <li>Awarded MEITI Japan Scholarship for outstanding internship performance in Tokyo, Japan.</li>
-        <li>Developed Skill CertifyAI NLP system and region-specific LLM evaluation tools with fairness metrics.</li>
-        <li>Reduced distributed execution time from 13 hours to 20 minutes in Volkswagen production systems.</li>
-      </ul>
+      <div class="news-section">
+        <h1 id="news">Latest News</h1>
+        <ul class="news-list">
+          <li class="news-item">
+            <span class="news-icon">🔬</span>
+            <div class="news-content">
+              <p>Conducted research with Dr. Jing Ma on logic-based explanations using GNNs for symbolic counterfactuals.</p>
+            </div>
+          </li>
+          <li class="news-item">
+            <span class="news-icon">🏆</span>
+            <div class="news-content">
+              <p>Awarded MEITI Japan Scholarship for outstanding internship performance in Tokyo, Japan.</p>
+            </div>
+          </li>
+          <li class="news-item">
+            <span class="news-icon">🚀</span>
+            <div class="news-content">
+              <p>Developed Skill CertifyAI NLP system and region-specific LLM evaluation tools with fairness metrics.</p>
+            </div>
+          </li>
+          <li class="news-item">
+            <span class="news-icon">⚡</span>
+            <div class="news-content">
+              <p>Reduced distributed execution time from 13 hours to 20 minutes in Volkswagen production systems.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </section>
 
   </div>
