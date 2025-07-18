@@ -334,7 +334,7 @@ a:hover::after {
 .site-title,
 .site-title a {
   font-family: 'Playfair Display', serif;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 700;
   background: var(--gradient-hero);
   -webkit-background-clip: text;
@@ -342,26 +342,37 @@ a:hover::after {
   background-clip: text;
   text-decoration: none;
   transition: all var(--duration-normal) var(--ease-out);
+  flex-shrink: 0;
+  white-space: nowrap;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .visible-links {
   display: flex;
   align-items: center;
-  gap: var(--space-lg);
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 100%;
+  overflow: visible;
 }
 
 .visible-links a {
   color: var(--text-primary);
   text-decoration: none;
   font-weight: 600;
-  padding: var(--space-sm) var(--space-lg);
+  padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius-lg);
   transition: all var(--duration-normal) var(--ease-out);
   background: rgba(79, 70, 229, 0.1);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(79, 70, 229, 0.2);
-  font-size: 1rem;
+  font-size: 0.95rem;
   letter-spacing: 0.025em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .visible-links a:hover {
@@ -405,11 +416,62 @@ a:hover::after {
 .masthead__inner-wrap {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 var(--space-lg);
+  padding: 0 var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
 }
 
 .greedy-nav {
   background: transparent;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  max-width: 100%;
+  overflow: visible;
+}
+
+/* Responsive navigation adjustments */
+@media (max-width: 1024px) {
+  .visible-links {
+    gap: var(--space-sm);
+  }
+  
+  .visible-links a {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.9rem;
+  }
+  
+  .masthead__inner-wrap {
+    padding: 0 var(--space-sm);
+  }
+}
+
+@media (max-width: 768px) {
+  .visible-links {
+    gap: var(--space-xs);
+    justify-content: center;
+    width: 100%;
+    margin-top: var(--space-md);
+  }
+  
+  .visible-links a {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.85rem;
+  }
+  
+  .masthead__inner-wrap {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .site-title,
+  .site-title a {
+    font-size: 1.5rem;
+  }
 }
 
 .masthead__menu-item a {
