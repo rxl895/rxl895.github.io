@@ -104,32 +104,109 @@
     --border-color: #334155;
     --border-light: #475569;
     --gradient-card: linear-gradient(145deg, #1e293b 0%, #334155 100%);
+    
+    /* Enhanced dark mode shadows */
+    --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
   }
   
-  /* Dark mode navigation enhancements */
+  /* Force dark mode for body */
+  body {
+    background: var(--bg-gradient) !important;
+    color: var(--text-primary) !important;
+  }
+  
+  /* FORCE HIGH CONTRAST NAVIGATION */
   .masthead {
-    background: rgba(15, 23, 42, 0.95) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: rgba(15, 23, 42, 0.98) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+  
+  .visible-links a {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 700 !important;
+  }
+  
+  .visible-links a:hover {
+    background: var(--gradient-primary) !important;
+    color: white !important;
+    border-color: transparent !important;
+  }
+  
+  .site-title,
+  .site-title a {
+    color: #ffffff !important;
   }
   
   /* Dark mode sidebar */
   .sidebar {
-    background: var(--gradient-card);
-    border-right: 1px solid var(--border-light);
+    background: var(--gradient-card) !important;
+    border-right: 1px solid var(--border-light) !important;
+  }
+  
+  .author__name {
+    color: var(--text-primary) !important;
+  }
+  
+  .author__bio {
+    color: var(--text-secondary) !important;
+  }
+  
+  .author__urls a {
+    color: var(--text-primary) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+  
+  .author__urls a:hover {
+    color: white !important;
   }
   
   /* Dark mode content */
   .page__content {
-    background: rgba(30, 41, 59, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(30, 41, 59, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-primary) !important;
+  }
+  
+  .page__title {
+    color: var(--text-primary) !important;
   }
   
   /* Dark mode cards */
   .card,
   .list__item,
   .archive__item {
-    background: var(--gradient-card);
-    border: 1px solid var(--border-light);
+    background: var(--gradient-card) !important;
+    border: 1px solid var(--border-light) !important;
+  }
+  
+  /* Force dark mode text colors */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary) !important;
+  }
+  
+  p, li, span {
+    color: var(--text-secondary) !important;
+  }
+  
+  /* Dark mode links */
+  a {
+    color: var(--primary-light) !important;
+  }
+  
+  /* Dark mode form elements */
+  input, textarea, select {
+    background: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-light) !important;
   }
 }
 
