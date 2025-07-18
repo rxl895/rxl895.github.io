@@ -5,7 +5,6 @@ permalink: /publications/
 author_profile: true
 ---
 
-<div class="archive">
 <h1 id="working-papers-submissions">Working Papers &amp; Submissions</h1>
 <ol>
 <li>
@@ -25,4 +24,3 @@ author_profile: true
     Contributed to formal fairness testing pipelines for ML models.  Surveyed 75+ papers across symbolic, formal, and empirical fairness auditing frameworks. 
 </li>
 </ol>
-</div>
