@@ -4,7 +4,7 @@
    ========================================================================== */
 
 /* FORCE CACHE REFRESH */
-/* Clean Theme v5.0 - Glass morphism theme with centered sidebar text */
+/* Clean Theme v5.1 - Glass morphism theme with centered sidebar text - Ultra specific */
 
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
@@ -219,6 +219,18 @@ body {
   display: block !important;
 }
 
+/* Ultra-specific overrides for sidebar text centering */
+html body .page__inner-wrap .sidebar .author__content .author__name,
+html body .sidebar .author__name,
+.page .sidebar .author__name,
+.layout--archive .sidebar .author__name {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+  width: 100% !important;
+}
+
 .author__bio {
   color: var(--text-secondary) !important;
   font-size: 1rem !important;
@@ -227,6 +239,18 @@ body {
   text-align: center !important;
   width: 100% !important;
   display: block !important;
+}
+
+/* Ultra-specific overrides for bio text centering */
+html body .page__inner-wrap .sidebar .author__content .author__bio,
+html body .sidebar .author__bio,
+.page .sidebar .author__bio,
+.layout--archive .sidebar .author__bio {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+  width: 100% !important;
 }
 
 .author__urls {
@@ -651,4 +675,27 @@ table tr:hover {
   text-align: center !important;
   display: block !important;
   width: 100% !important;
+}
+
+/* Target the exact HTML elements from author-profile.html */
+.author__content h3.author__name,
+h3.author__name,
+.author__content p.author__bio,
+p.author__bio {
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Override any potential inherited text alignment */
+.sidebar * {
+  text-align: center !important;
+}
+
+/* Most specific override possible */
+div[itemscope] .author__content h3.author__name,
+div[itemscope] .author__content p.author__bio {
+  text-align: center !important;
 }
