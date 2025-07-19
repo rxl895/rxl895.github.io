@@ -1,6 +1,84 @@
-/* Force update - version 2.5 - Fix experience page formatting and navbar consistency */
+/* Force update - version 2.6 - Add dark/light theme system */
 body {
-    --emergency-fix-version: 2.5;
+    --emergency-fix-version: 2.6;
+}
+
+/* ===== DARK/LIGHT THEME SYSTEM ===== */
+
+/* Light Theme (Default) */
+:root,
+[data-theme="light"] {
+    --primary-color: #16a34a;
+    --primary-color-light: rgba(22, 163, 74, 0.1);
+    --primary-color-hover: rgba(22, 163, 74, 0.2);
+    --background-color: #fafafa;
+    --surface-color: #ffffff;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+    --border-color: rgba(22, 163, 74, 0.3);
+    --shadow-color: rgba(22, 163, 74, 0.15);
+    --glass-bg: rgba(255, 255, 255, 0.95);
+    --glass-border: rgba(22, 163, 74, 0.3);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --primary-color: #22c55e;
+    --primary-color-light: rgba(34, 197, 94, 0.15);
+    --primary-color-hover: rgba(34, 197, 94, 0.25);
+    --background-color: #0f172a;
+    --surface-color: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-color: rgba(34, 197, 94, 0.4);
+    --shadow-color: rgba(34, 197, 94, 0.2);
+    --glass-bg: rgba(30, 41, 59, 0.85);
+    --glass-border: rgba(34, 197, 94, 0.4);
+}
+
+/* Apply theme colors to body */
+body {
+    background-color: var(--background-color) !important;
+    color: var(--text-primary) !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Surface elements */
+.page,
+.archive,
+.page__content,
+#main,
+.sidebar {
+    background-color: var(--background-color) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Text color overrides */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary) !important;
+}
+
+p, li, span, div {
+    color: var(--text-primary) !important;
+}
+
+/* Links */
+a {
+    color: var(--primary-color) !important;
+}
+
+a:hover {
+    color: var(--primary-color) !important;
+    opacity: 0.8;
+}
+
+/* Secondary text */
+.author__bio,
+.page__meta,
+.archive__subtitle {
+    color: var(--text-secondary) !important;
 }
 
 /* Ensure navbar appears above all content */
@@ -8,7 +86,7 @@ html, body {
     position: relative !important;
 }
 
-/* Glass Top Navigation Bar - Enhanced visibility */
+/* Glass Top Navigation Bar - Enhanced visibility with theme support */
 nav.top-navbar,
 .top-navbar {
     position: fixed !important;
@@ -16,13 +94,13 @@ nav.top-navbar,
     left: 50% !important;
     transform: translateX(-50%) !important;
     z-index: 99999 !important;
-    background: rgba(255, 255, 255, 0.95) !important;
+    background: var(--glass-bg) !important;
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
     border-radius: 30px !important;
     padding: 8px 20px !important;
-    border: 1px solid rgba(22, 163, 74, 0.3) !important;
-    box-shadow: 0 4px 20px rgba(22, 163, 74, 0.15) !important;
+    border: 1px solid var(--glass-border) !important;
+    box-shadow: 0 4px 20px var(--shadow-color) !important;
     display: flex !important;
     align-items: center !important;
     gap: 20px !important;
@@ -31,6 +109,7 @@ nav.top-navbar,
     visibility: visible !important;
     opacity: 1 !important;
     white-space: nowrap !important;
+    transition: all 0.3s ease !important;
 }
 
 .top-navbar .logo {
@@ -78,7 +157,7 @@ nav.top-navbar,
 .top-navbar .nav-links a:hover,
 .top-navbar .nav-links a.active {
     color: var(--primary-color) !important;
-    background: rgba(22, 163, 74, 0.1) !important;
+    background: var(--primary-color-light) !important;
 }
 
 .top-navbar .nav-links a.active::after {
@@ -94,7 +173,7 @@ nav.top-navbar,
 
 /* Theme toggle button */
 .theme-toggle {
-    background: rgba(22, 163, 74, 0.1) !important;
+    background: var(--primary-color-light) !important;
     border: none !important;
     border-radius: 15px !important;
     padding: 6px 10px !important;
@@ -105,7 +184,8 @@ nav.top-navbar,
 }
 
 .theme-toggle:hover {
-    background: rgba(22, 163, 74, 0.2) !important;
+    background: var(--primary-color-hover) !important;
+    transform: scale(1.05);
 }
 
 /* Adjust body padding to accommodate fixed navbar - reduced since no masthead */
@@ -140,11 +220,22 @@ body {
 }
 
 /* Emergency sidebar centering fix - ONLY for text centering, preserve everything else */
+.sidebar {
+    background-color: var(--surface-color) !important;
+    padding: 1rem !important;
+    transition: background-color 0.3s ease;
+}
+
 .sidebar .author__name,
 .sidebar h3.author__name,
 .sidebar .author__bio,
 .sidebar p.author__bio {
     text-align: center !important;
+    color: var(--text-primary) !important;
+}
+
+.sidebar .author__bio {
+    color: var(--text-secondary) !important;
 }
 
 /* Center the profile picture - More aggressive */
@@ -281,7 +372,8 @@ div[itemscope] > div {
 .archive,
 .page__content,
 #main {
-    background: var(--background-color, #fafafa) !important;
+    background-color: var(--background-color) !important;
+    color: var(--text-primary) !important;
 }
 
 /* Ensure experience page uses our theme - but preserve formatting */
@@ -289,7 +381,33 @@ div[itemscope] > div {
 .archive h2,
 .archive h3,
 .archive h4 {
-    color: var(--primary-color, #16a34a) !important;
+    color: var(--primary-color) !important;
+}
+
+/* Footer theming */
+.page__footer,
+.page__footer footer {
+    background-color: var(--surface-color) !important;
+    color: var(--text-secondary) !important;
+    border-top: 1px solid var(--border-color) !important;
+}
+
+/* Content area theming */
+.page__content,
+.archive__item {
+    background-color: var(--surface-color) !important;
+    color: var(--text-primary) !important;
+    padding: 1.5rem !important;
+    border-radius: 10px !important;
+    margin-bottom: 1rem !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease;
+}
+
+/* Dark theme specific adjustments */
+[data-theme="dark"] .page__content,
+[data-theme="dark"] .archive__item {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
 }
 
 /* REMOVE aggressive font override - let pages use their natural fonts */
