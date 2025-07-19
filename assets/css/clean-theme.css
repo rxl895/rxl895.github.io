@@ -4,7 +4,7 @@
    ========================================================================== */
 
 /* FORCE CACHE REFRESH */
-/* Version: 4.0 - Clean Theme */
+/* Version: 4.1 - Clean Theme - Fixed HTML remnants */
 
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
@@ -320,6 +320,16 @@ body {
 }
 
 .archive .page__title {
+  display: none !important;
+}
+
+/* HIDE ANY STRAY HTML TAGS */
+.page__content div:empty,
+.archive div:empty,
+.page__content ul:empty,
+.archive ul:empty,
+.page__content li:empty,
+.archive li:empty {
   display: none !important;
 }
 
