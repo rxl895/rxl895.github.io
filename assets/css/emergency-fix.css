@@ -47,9 +47,10 @@ h3, p {
     padding-right: 0 !important;
 }
 
-/* Reduce gap between photo and name */
+/* Reduce gap between photo and name - More aggressive */
 .author__avatar {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.2rem !important;
+    margin-top: 0 !important;
 }
 
 .author__content {
@@ -60,6 +61,23 @@ h3, p {
 .author__name {
     margin-top: 0 !important;
     padding-top: 0 !important;
+    margin-bottom: 0.3rem !important;
+}
+
+.author__bio {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Remove any spacing from the entire author profile container */
+div[itemscope] {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+div[itemscope] > div {
+    margin: 0.2rem 0 !important;
+    padding: 0 !important;
 }
 
 /* Reduce gap */
@@ -75,4 +93,25 @@ h3, p {
     align-items: center !important;
     text-align: center !important;
     width: 100% !important;
+}
+
+/* Ultra compact sidebar */
+.sidebar {
+    padding: 1rem !important;
+}
+
+.sidebar > div {
+    margin: 0.1rem 0 !important;
+}
+
+/* Make the entire sidebar more compact */
+.sidebar .author__avatar img {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.sidebar h3, .sidebar p {
+    margin: 0.2rem 0 !important;
+    padding: 0 !important;
+    line-height: 1.2 !important;
 }
