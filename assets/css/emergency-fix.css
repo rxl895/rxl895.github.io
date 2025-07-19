@@ -1,6 +1,6 @@
-/* Force update - version 2.6 - Add dark/light theme system */
+/* Force update - version 2.7 - Fix publication page heading colors */
 body {
-    --emergency-fix-version: 2.6;
+    --emergency-fix-version: 2.7;
 }
 
 /* ===== DARK/LIGHT THEME SYSTEM ===== */
@@ -58,6 +58,19 @@ body {
 /* Text color overrides */
 h1, h2, h3, h4, h5, h6 {
     color: var(--text-primary) !important;
+}
+
+/* Page headings should be green */
+.page__title,
+.archive .page__title,
+h1.page__title,
+.page__content h1,
+.page__content h2,
+.archive h1,
+.archive h2,
+.archive h3,
+.archive h4 {
+    color: var(--primary-color) !important;
 }
 
 p, li, span, div {
@@ -381,6 +394,18 @@ div[itemscope] > div {
 .archive h2,
 .archive h3,
 .archive h4 {
+    color: var(--primary-color) !important;
+}
+
+/* Make sure publication page headings are also green */
+.publications h1,
+.publications h2,
+.publications h3,
+.publications h4,
+.page__content h1,
+.page__content h2,
+.page__content h3,
+.page__content h4 {
     color: var(--primary-color) !important;
 }
 
