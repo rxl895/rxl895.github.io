@@ -4,7 +4,7 @@
    ========================================================================== */
 
 /* FORCE CACHE REFRESH */
-/* Version: 4.6 - Clean Theme - Fix homepage sidebar visibility */
+/* Version: 4.7 - Clean Theme - Remove green icon background from profile picture */
 
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
@@ -176,9 +176,9 @@ body {
 }
 
 .author__avatar {
-  background: var(--primary-color) !important;
-  padding: 4px !important;
-  box-shadow: var(--shadow-lg) !important;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: var(--shadow-md) !important;
   margin: 2rem auto !important;
   width: fit-content !important;
   border-radius: 50% !important;
@@ -187,9 +187,11 @@ body {
 
 .author__avatar img {
   border-radius: 50% !important;
-  width: 100% !important;
-  height: auto !important;
+  width: 200px !important;
+  height: 200px !important;
+  object-fit: cover !important;
   display: block !important;
+  border: 3px solid var(--primary-color) !important;
 }
 
 .author__content {
