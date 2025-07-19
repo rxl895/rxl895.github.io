@@ -5,7 +5,9 @@ permalink: /experience/
 author_profile: true
 ---
 
-## Work Experience
+# Experience
+
+## Corporate Experience
 
 ### Software Developer
 **Volkswagen IT Services** • Dec 2021 – Aug 2023
@@ -23,33 +25,32 @@ author_profile: true
 * Designed and deployed microservices using Java, Docker, and AWS/Azure cloud platforms
 * Contributed to scalable REST APIs for enterprise solutions; optimized workflows through testing and debugging
 
-## Education
+## Academic Experience
 
-### MS in Computer Science and Engineering
+### Education
+
+#### MS in Computer Science and Engineering
 **Case Western Reserve University** • Aug 2023 – May 2025  
 *Track: Artificial Intelligence*
 
-### Bachelor of Engineering in Computer Science
+#### Bachelor of Engineering in Computer Science
 **Chandigarh University** • June 2018 – May 2022  
 *Specialization: AI & ML*
 
-## Research Assistant Positions
+### Research Assistant Positions
 
-### Research Assistant
+#### Research Assistant - Trustworthy AI
 **Case Western Reserve University** • Jan 2024 – Present
 
 * Conducted literature reviews to identify novel topics in Trustworthy AI under Dr. Jing Ma
 * Contributed to research publications in Explainable AI and Fairness methods
 
-### Research Assistant
+#### Research Assistant - AI NLP System
 **Case Western Reserve University** • Aug 2024 – Dec 2024
 
 * Enhanced Skill Certify AI NLP system with modern AI tools such as Hugging Face and PyTorch under Prof. Erman Ayday
 
-### Research Assistant
+#### Research Assistant - Web Application Backend
 **Case Western Reserve University** • May 2024 – Aug 2024
 
 * Worked on the backend part of the Study WebApp Project, in xlab, under the supervision of Prof Erman Ayday
-</li>
-</ul>
-</div>

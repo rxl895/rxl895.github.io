@@ -325,24 +325,36 @@ body {
 
 .page__content h1 {
   color: var(--primary-color) !important;
-  border-bottom: 2px solid var(--primary-color) !important;
-  padding-bottom: 0.5rem !important;
-  margin-bottom: 1.5rem !important;
+  border-bottom: 3px solid var(--primary-color) !important;
+  padding-bottom: 0.8rem !important;
+  margin-bottom: 2rem !important;
+  font-size: 2.5rem !important;
+  text-align: center !important;
 }
 
 .page__content h2 {
   color: var(--primary-color) !important;
-  border-bottom: 1px solid var(--primary-color) !important;
-  padding-bottom: 0.3rem !important;
-  margin-top: 2rem !important;
-  margin-bottom: 1rem !important;
+  border-bottom: 2px solid var(--primary-color) !important;
+  padding-bottom: 0.5rem !important;
+  margin-top: 3rem !important;
+  margin-bottom: 1.5rem !important;
+  font-size: 2rem !important;
 }
 
 .page__content h3 {
   color: var(--accent-color) !important;
-  margin-top: 1.5rem !important;
+  margin-top: 2rem !important;
   margin-bottom: 0.8rem !important;
   font-weight: 600 !important;
+  font-size: 1.5rem !important;
+}
+
+.page__content h4 {
+  color: var(--accent-color) !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.6rem !important;
+  font-weight: 500 !important;
+  font-size: 1.2rem !important;
 }
 
 .page__content h3 + p {
