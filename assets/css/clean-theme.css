@@ -4,7 +4,7 @@
    ========================================================================== */
 
 /* FORCE CACHE REFRESH */
-/* Version: 4.4 - Clean Theme - Force homepage and service page update */
+/* Version: 4.5 - Clean Theme - Fix service page double boxes */
 
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
@@ -444,7 +444,10 @@ a:hover {
 /* FORCE CARD STYLES - UNIFIED CONTENT BOX */
 .card,
 .list__item,
-.archive__item {
+.archive__item,
+.archive__item-title,
+.archive__item-excerpt,
+article.archive__item {
   background: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
@@ -454,14 +457,28 @@ a:hover {
   box-shadow: none !important;
   border: none !important;
   transition: none !important;
+  display: block !important;
 }
 
 .card:hover,
 .list__item:hover,
-.archive__item:hover {
+.archive__item:hover,
+article.archive__item:hover {
   transform: none !important;
   box-shadow: none !important;
   border-color: transparent !important;
+  background: transparent !important;
+}
+
+/* COMPLETELY DISABLE ARCHIVE ITEM CONTAINERS */
+.archive .list__item,
+.archive .archive__item,
+.archive article {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 /* ENSURE ALL CONTENT STAYS WITHIN MAIN CONTAINER */
