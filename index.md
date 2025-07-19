@@ -5,10 +5,6 @@ permalink: /
 author_profile: true
 ---
 
-<!-- Updated: July 2025 - Clean homepage with sidebar -->
-
-# About Me
-
 I am an LLM-focused ML Engineer with a strong foundation in scalable AI infrastructure, fairness, and interpretability. I have industry-proven experience building distributed systems at Volkswagen IT, paired with academic research in explainable AI, LORA-based LLM optimization, and symbolic reasoning. I am passionate about deploying efficient, trustworthy, and human-aligned intelligence at scale.
 
 ## Research Interests
