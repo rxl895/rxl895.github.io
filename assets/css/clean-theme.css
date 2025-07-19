@@ -4,7 +4,7 @@
    ========================================================================== */
 
 /* FORCE CACHE REFRESH */
-/* Version: 4.8 - Clean Theme - Completely remove all avatar background styling */
+/* Version: 4.9 - Clean Theme - Center align name and bio in sidebar */
 
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
@@ -214,6 +214,7 @@ body {
   font-weight: 600 !important;
   color: var(--primary-color) !important;
   margin-bottom: 1rem !important;
+  text-align: center !important;
 }
 
 .author__bio {
@@ -221,6 +222,7 @@ body {
   font-size: 1rem !important;
   margin-bottom: 2rem !important;
   line-height: 1.6 !important;
+  text-align: center !important;
 }
 
 .author__urls {
