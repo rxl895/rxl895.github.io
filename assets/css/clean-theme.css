@@ -18,6 +18,7 @@
 :root {
   --primary-color: #16a34a;
   --primary-dark: #15803d;
+  --accent-color: #059669;
   --text-primary: #1f2937;
   --text-secondary: #4b5563;
   --text-muted: #6b7280;
@@ -311,6 +312,15 @@ body {
   border: 1px solid var(--border-color) !important;
   position: relative !important;
   color: var(--text-primary) !important;
+}
+
+/* HIDE DUPLICATE PAGE TITLES */
+.page__title {
+  display: none !important;
+}
+
+.archive .page__title {
+  display: none !important;
 }
 
 .page__content h1 {
