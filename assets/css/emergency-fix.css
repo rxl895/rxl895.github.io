@@ -12,7 +12,7 @@ html, body {
 nav.top-navbar,
 .top-navbar {
     position: fixed !important;
-    top: 20px !important;
+    top: 15px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     z-index: 99999 !important;
@@ -20,32 +20,34 @@ nav.top-navbar,
     background: rgba(255, 255, 255, 0.95) !important;
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
-    border-radius: 50px !important;
-    padding: 12px 30px !important;
-    border: 2px solid rgba(22, 163, 74, 0.5) !important;
-    box-shadow: 0 8px 32px rgba(22, 163, 74, 0.3) !important;
+    border-radius: 30px !important;
+    padding: 8px 20px !important;
+    border: 1px solid rgba(22, 163, 74, 0.3) !important;
+    box-shadow: 0 4px 20px rgba(22, 163, 74, 0.15) !important;
     display: flex !important;
     align-items: center !important;
-    gap: 30px !important;
+    gap: 20px !important;
     max-width: 90vw !important;
     width: auto !important;
     visibility: visible !important;
     opacity: 1 !important;
+    white-space: nowrap !important;
 }
 
 .top-navbar .logo {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: var(--primary-color);
     text-decoration: none;
+    white-space: nowrap !important;
 }
 
 .top-navbar .logo-icon {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     background: var(--primary-color);
     border-radius: 50%;
     display: flex;
@@ -53,12 +55,12 @@ nav.top-navbar,
     justify-content: center;
     color: white;
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 .top-navbar .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 15px;
     align-items: center;
 }
 
@@ -66,11 +68,12 @@ nav.top-navbar,
     color: var(--text-secondary);
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.95rem;
-    padding: 8px 16px;
-    border-radius: 20px;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 15px;
     transition: all 0.3s ease;
     position: relative;
+    white-space: nowrap;
 }
 
 .top-navbar .nav-links a:hover,
@@ -83,8 +86,8 @@ nav.top-navbar,
     content: '';
     position: absolute;
     bottom: -2px;
-    left: 16px;
-    right: 16px;
+    left: 12px;
+    right: 12px;
     height: 2px;
     background: var(--primary-color);
     border-radius: 2px;
@@ -94,11 +97,11 @@ nav.top-navbar,
 .theme-toggle {
     background: rgba(22, 163, 74, 0.1);
     border: none;
-    border-radius: 20px;
-    padding: 8px 12px;
+    border-radius: 15px;
+    padding: 6px 10px;
     cursor: pointer;
     color: var(--primary-color);
-    font-size: 1rem;
+    font-size: 0.9rem;
     transition: all 0.3s ease;
 }
 
@@ -108,32 +111,32 @@ nav.top-navbar,
 
 /* Adjust body padding to accommodate fixed navbar - reduced since no masthead */
 body {
-    padding-top: 100px !important; /* More space for the glass navbar */
+    padding-top: 70px !important; /* Less space needed for smaller navbar */
 }
 
 /* Mobile responsive */
 @media (max-width: 768px) {
     .top-navbar {
-        padding: 10px 20px;
-        gap: 20px;
-        border-radius: 25px;
+        padding: 6px 15px;
+        gap: 12px;
+        border-radius: 20px;
     }
     
     .top-navbar .nav-links {
-        gap: 15px;
+        gap: 10px;
     }
     
     .top-navbar .nav-links a {
-        padding: 6px 12px;
-        font-size: 0.9rem;
+        padding: 4px 8px;
+        font-size: 0.8rem;
     }
     
     .top-navbar .logo {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     
     body {
-        padding-top: 90px !important; /* Adjusted for mobile */
+        padding-top: 60px !important; /* Adjusted for mobile */
     }
 }
 
