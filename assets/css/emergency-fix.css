@@ -1,50 +1,9 @@
-/* Emergency sidebar centering fix - Ultra aggressive */
-.author__name,
-h3.author__name,
-.author__bio,
-p.author__bio,
-.author__content *,
+/* Emergency sidebar centering fix - ONLY for text centering, preserve everything else */
 .sidebar .author__name,
+.sidebar h3.author__name,
 .sidebar .author__bio,
-.sidebar h3,
-.sidebar p {
+.sidebar p.author__bio {
     text-align: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block !important;
-    width: 100% !important;
-    position: relative !important;
-}
-
-.sidebar,
-.author__content {
-    text-align: center !important;
-    width: 100% !important;
-}
-
-.sidebar * {
-    text-align: center !important;
-}
-
-/* Most aggressive override - target all possible author elements */
-[class*="author"] {
-    text-align: center !important;
-}
-
-/* Target by element type */
-h3, p {
-    text-align: center !important;
-}
-
-/* Override any float or positioning that might cause right alignment */
-.sidebar .author__name,
-.sidebar .author__bio {
-    float: none !important;
-    clear: both !important;
-    text-align: center !important;
-    margin: 0 auto !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
 }
 
 /* Reduce gap between photo and name - More aggressive */
@@ -116,28 +75,11 @@ div[itemscope] > div {
     line-height: 1.2 !important;
 }
 
-/* Keep main content left-aligned */
-.page__content,
-.archive,
-.archive h1,
-.archive h2,
-.archive h3,
-.archive p,
-.archive ul,
-.archive li {
+/* Keep main content left-aligned - ONLY target main content, not sidebar */
+.page__content {
     text-align: left !important;
 }
 
-/* Specifically target the main content area */
-#main .archive {
-    text-align: left !important;
-}
-
-#main .archive * {
-    text-align: left !important;
-}
-
-/* Override any center alignment for main content */
 .page__content h1,
 .page__content h2,
 .page__content h3,
@@ -146,4 +88,22 @@ div[itemscope] > div {
 .page__content li {
     text-align: left !important;
     margin-left: 0 !important;
+}
+
+/* Specifically target only the archive content (main content area) */
+.archive__item,
+.archive__item h1,
+.archive__item h2,
+.archive__item h3,
+.archive__item p,
+.archive__item ul,
+.archive__item li {
+    text-align: left !important;
+}
+
+/* Target the main content wrapper but NOT the sidebar */
+#main .page__content,
+#main .archive:not(.sidebar),
+.layout--archive .page__content {
+    text-align: left !important;
 }
