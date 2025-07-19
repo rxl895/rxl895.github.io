@@ -1,6 +1,6 @@
-/* Force update - version 2.4 - Fix navbar consistency across all pages */
+/* Force update - version 2.5 - Fix experience page formatting and navbar consistency */
 body {
-    --emergency-fix-version: 2.4;
+    --emergency-fix-version: 2.5;
 }
 
 /* Ensure navbar appears above all content */
@@ -16,7 +16,6 @@ nav.top-navbar,
     left: 50% !important;
     transform: translateX(-50%) !important;
     z-index: 99999 !important;
-    background: white !important; /* Solid background for debugging */
     background: rgba(255, 255, 255, 0.95) !important;
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
@@ -32,27 +31,6 @@ nav.top-navbar,
     visibility: visible !important;
     opacity: 1 !important;
     white-space: nowrap !important;
-}
-
-/* Ensure navbar is consistent across ALL page layouts */
-body .top-navbar,
-html .top-navbar,
-.layout--default .top-navbar,
-.layout--archive .top-navbar,
-.layout--single .top-navbar,
-.page .top-navbar {
-    position: fixed !important;
-    top: 15px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    z-index: 99999 !important;
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    border-radius: 30px !important;
-    padding: 8px 20px !important;
-    border: 1px solid rgba(22, 163, 74, 0.3) !important;
-    box-shadow: 0 4px 20px rgba(22, 163, 74, 0.15) !important;
 }
 
 .top-navbar .logo {
@@ -99,35 +77,35 @@ html .top-navbar,
 
 .top-navbar .nav-links a:hover,
 .top-navbar .nav-links a.active {
-    color: var(--primary-color);
-    background: rgba(22, 163, 74, 0.1);
+    color: var(--primary-color) !important;
+    background: rgba(22, 163, 74, 0.1) !important;
 }
 
 .top-navbar .nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 12px;
-    right: 12px;
-    height: 2px;
-    background: var(--primary-color);
-    border-radius: 2px;
+    content: '' !important;
+    position: absolute !important;
+    bottom: -2px !important;
+    left: 12px !important;
+    right: 12px !important;
+    height: 2px !important;
+    background: var(--primary-color) !important;
+    border-radius: 2px !important;
 }
 
 /* Theme toggle button */
 .theme-toggle {
-    background: rgba(22, 163, 74, 0.1);
-    border: none;
-    border-radius: 15px;
-    padding: 6px 10px;
-    cursor: pointer;
-    color: var(--primary-color);
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
+    background: rgba(22, 163, 74, 0.1) !important;
+    border: none !important;
+    border-radius: 15px !important;
+    padding: 6px 10px !important;
+    cursor: pointer !important;
+    color: var(--primary-color) !important;
+    font-size: 0.9rem !important;
+    transition: all 0.3s ease !important;
 }
 
 .theme-toggle:hover {
-    background: rgba(22, 163, 74, 0.2);
+    background: rgba(22, 163, 74, 0.2) !important;
 }
 
 /* Adjust body padding to accommodate fixed navbar - reduced since no masthead */
@@ -298,28 +276,20 @@ div[itemscope] > div {
     text-align: left !important;
 }
 
-/* Force clean theme on all pages */
+/* Override any remaining old theme elements - BE MORE SELECTIVE */
 .page,
 .archive,
 .page__content,
 #main {
     background: var(--background-color, #fafafa) !important;
-    color: var(--text-color, #333) !important;
 }
 
-/* Ensure experience page uses our theme */
-.archive h1,
+/* Ensure experience page uses our theme - but preserve formatting */
+.archive h1.page__title,
 .archive h2,
 .archive h3,
 .archive h4 {
     color: var(--primary-color, #16a34a) !important;
 }
 
-/* Override any remaining old theme elements */
-* {
-    box-sizing: border-box !important;
-}
-
-body * {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-}
+/* REMOVE aggressive font override - let pages use their natural fonts */
