@@ -13,6 +13,24 @@ layout: compress
 
   <body>
 
+    <!-- Glass Top Navigation Bar -->
+    <nav class="top-navbar">
+      <a href="{{ site.url }}{{ site.baseurl }}/" class="logo">
+        <div class="logo-icon">R</div>
+        Ritika Lamba
+      </a>
+      <div class="nav-links">
+        <a href="{{ site.url }}{{ site.baseurl }}/" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/publications/" {% if page.url contains "/publications" %}class="active"{% endif %}>Publications</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/teaching/" {% if page.url contains "/teaching" %}class="active"{% endif %}>Teaching</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/experience/" {% if page.url contains "/experience" %}class="active"{% endif %}>Experience</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/awards/" {% if page.url contains "/awards" %}class="active"{% endif %}>Awards</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/blogs/" {% if page.url contains "/blogs" %}class="active"{% endif %}>Blog</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/news/" {% if page.url contains "/news" %}class="active"{% endif %}>News</a>
+      </div>
+      <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    </nav>
+
     {% include browser-upgrade.html %}
     {% include masthead.html %}
 
