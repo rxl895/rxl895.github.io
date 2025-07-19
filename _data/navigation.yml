@@ -19,3 +19,9 @@ main:
 
   - title: "Students"
     url: /students/
+
+  - title: "Blogs"
+    url: /blogs/
+
+  - title: "News"
+    url: /news/
