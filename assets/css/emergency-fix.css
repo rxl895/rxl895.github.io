@@ -1,31 +1,63 @@
-/* Emergency sidebar centering fix */
+/* Emergency sidebar centering fix - Ultra aggressive */
 .author__name,
 h3.author__name,
 .author__bio,
 p.author__bio,
-.author__content * {
+.author__content *,
+.sidebar .author__name,
+.sidebar .author__bio,
+.sidebar h3,
+.sidebar p {
     text-align: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
     display: block !important;
     width: 100% !important;
+    position: relative !important;
 }
 
-.sidebar {
+.sidebar,
+.author__content {
     text-align: center !important;
+    width: 100% !important;
 }
 
 .sidebar * {
     text-align: center !important;
 }
 
-/* Force override any existing styles */
+/* Most aggressive override - target all possible author elements */
 [class*="author"] {
     text-align: center !important;
+}
+
+/* Target by element type */
+h3, p {
+    text-align: center !important;
+}
+
+/* Override any float or positioning that might cause right alignment */
+.sidebar .author__name,
+.sidebar .author__bio {
+    float: none !important;
+    clear: both !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 /* Reduce gap */
 #main {
     gap: 0.5rem !important;
     padding: 1rem !important;
+}
+
+/* Force center align with flexbox if needed */
+.author__content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
 }

@@ -1,43 +1,43 @@
-// Force center alignment of sidebar text
+// Force center alignment of sidebar text - Ultra aggressive
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Centering sidebar text...');
     
-    // Target the author name and bio elements
-    const authorName = document.querySelector('.author__name, h3.author__name');
-    const authorBio = document.querySelector('.author__bio, p.author__bio');
-    const authorContent = document.querySelector('.author__content');
-    
-    // Apply centering styles
-    if (authorName) {
-        authorName.style.textAlign = 'center';
-        authorName.style.width = '100%';
-        authorName.style.display = 'block';
-        authorName.style.marginLeft = 'auto';
-        authorName.style.marginRight = 'auto';
-        console.log('Centered author name');
-    }
-    
-    if (authorBio) {
-        authorBio.style.textAlign = 'center';
-        authorBio.style.width = '100%';
-        authorBio.style.display = 'block';
-        authorBio.style.marginLeft = 'auto';
-        authorBio.style.marginRight = 'auto';
-        console.log('Centered author bio');
-    }
-    
-    if (authorContent) {
-        authorContent.style.textAlign = 'center';
-        console.log('Centered author content container');
-    }
-    
-    // Also try to center all elements within the sidebar
-    const sidebarElements = document.querySelectorAll('.sidebar .author__content *');
-    sidebarElements.forEach(function(element) {
-        element.style.textAlign = 'center';
-        element.style.marginLeft = 'auto';
-        element.style.marginRight = 'auto';
-    });
-    
-    console.log('Sidebar centering script completed');
+    // Wait a bit for CSS to load, then force center
+    setTimeout(function() {
+        // Target all possible author elements
+        const authorElements = document.querySelectorAll('.author__name, h3.author__name, .author__bio, p.author__bio, .sidebar h3, .sidebar p');
+        
+        authorElements.forEach(function(element) {
+            element.style.textAlign = 'center';
+            element.style.width = '100%';
+            element.style.display = 'block';
+            element.style.marginLeft = 'auto';
+            element.style.marginRight = 'auto';
+            element.style.float = 'none';
+            element.style.clear = 'both';
+            element.style.paddingLeft = '0';
+            element.style.paddingRight = '0';
+            element.style.position = 'relative';
+            console.log('Centered element:', element.className || element.tagName);
+        });
+        
+        // Also center the container
+        const authorContent = document.querySelector('.author__content');
+        if (authorContent) {
+            authorContent.style.textAlign = 'center';
+            authorContent.style.display = 'flex';
+            authorContent.style.flexDirection = 'column';
+            authorContent.style.alignItems = 'center';
+            authorContent.style.width = '100%';
+            console.log('Centered author content container');
+        }
+        
+        // Force center all sidebar content
+        const sidebarElements = document.querySelectorAll('.sidebar *');
+        sidebarElements.forEach(function(element) {
+            element.style.textAlign = 'center';
+        });
+        
+        console.log('Sidebar centering script completed - applied to', authorElements.length, 'elements');
+    }, 100); // Small delay to ensure CSS is loaded
 });
