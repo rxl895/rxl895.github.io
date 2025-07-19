@@ -4,7 +4,7 @@
    ========================================================================== */
 
 /* FORCE CACHE REFRESH */
-/* Clean Theme v5.1 - Glass morphism theme with centered sidebar text - Ultra specific */
+/* Clean Theme v5.2 - Glass morphism theme with centered sidebar text and reduced gap */
 
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
@@ -133,7 +133,7 @@ body {
   max-width: 1400px !important;
   margin: 0 auto !important;
   padding: 2rem !important;
-  gap: 2rem !important;
+  gap: 1rem !important;
 }
 
 /* FORCE SIDEBAR STYLE - ALWAYS VISIBLE */
