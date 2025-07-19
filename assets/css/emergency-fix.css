@@ -106,9 +106,9 @@ nav.top-navbar,
     background: rgba(22, 163, 74, 0.2);
 }
 
-/* Adjust body padding to accommodate fixed navbar */
+/* Adjust body padding to accommodate fixed navbar - reduced since no masthead */
 body {
-    padding-top: 80px;
+    padding-top: 100px !important; /* More space for the glass navbar */
 }
 
 /* Mobile responsive */
@@ -133,7 +133,7 @@ body {
     }
     
     body {
-        padding-top: 70px;
+        padding-top: 90px !important; /* Adjusted for mobile */
     }
 }
 
