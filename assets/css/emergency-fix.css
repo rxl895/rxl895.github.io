@@ -1,0 +1,31 @@
+/* Emergency sidebar centering fix */
+.author__name,
+h3.author__name,
+.author__bio,
+p.author__bio,
+.author__content * {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+.sidebar {
+    text-align: center !important;
+}
+
+.sidebar * {
+    text-align: center !important;
+}
+
+/* Force override any existing styles */
+[class*="author"] {
+    text-align: center !important;
+}
+
+/* Reduce gap */
+#main {
+    gap: 0.5rem !important;
+    padding: 1rem !important;
+}
