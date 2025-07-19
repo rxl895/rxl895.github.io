@@ -6,6 +6,20 @@
     text-align: center !important;
 }
 
+/* Center the profile picture */
+.author__avatar {
+    text-align: center !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.author__avatar img {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+}
+
 /* Reduce gap between photo and name - More aggressive */
 .author__avatar {
     margin-bottom: 0.2rem !important;
