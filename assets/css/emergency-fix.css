@@ -47,6 +47,21 @@ h3, p {
     padding-right: 0 !important;
 }
 
+/* Reduce gap between photo and name */
+.author__avatar {
+    margin-bottom: 0.5rem !important;
+}
+
+.author__content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.author__name {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
 /* Reduce gap */
 #main {
     gap: 0.5rem !important;
