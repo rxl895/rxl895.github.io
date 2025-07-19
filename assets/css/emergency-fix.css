@@ -1,6 +1,6 @@
-/* Force update - version 2.7 - Fix publication page heading colors */
+/* Force update - version 2.8 - Make publication titles bold and improve formatting */
 body {
-    --emergency-fix-version: 2.7;
+    --emergency-fix-version: 2.8;
 }
 
 /* ===== DARK/LIGHT THEME SYSTEM ===== */
@@ -407,6 +407,43 @@ div[itemscope] > div {
 .page__content h3,
 .page__content h4 {
     color: var(--primary-color) !important;
+}
+
+/* Publication titles should be bold */
+.page__content strong,
+.page__content b,
+.archive strong,
+.archive b,
+.publications strong,
+.publications b {
+    font-weight: 700 !important;
+    color: var(--primary-color) !important;
+}
+
+/* Publication paper titles (wrapped in ** **) */
+.page__content p strong,
+.archive p strong {
+    font-weight: bold !important;
+    color: var(--primary-color) !important;
+    font-size: 1.1em !important;
+    display: inline-block !important;
+    margin-bottom: 0.25rem !important;
+}
+
+/* Publication section formatting */
+.page__content p {
+    margin-bottom: 1.5rem !important;
+}
+
+/* Make publication section headings more prominent */
+.page__content h2,
+.archive h2 {
+    font-weight: 700 !important;
+    font-size: 1.8em !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+    border-bottom: 2px solid var(--primary-color) !important;
+    padding-bottom: 0.5rem !important;
 }
 
 /* Footer theming */
