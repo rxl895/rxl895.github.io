@@ -1,3 +1,8 @@
+/* Force update - version 2.0 */
+body {
+    --emergency-fix-version: 2.0;
+}
+
 /* Emergency sidebar centering fix - ONLY for text centering, preserve everything else */
 .sidebar .author__name,
 .sidebar h3.author__name,
@@ -6,17 +11,30 @@
     text-align: center !important;
 }
 
-/* Center the profile picture */
+/* Center the profile picture - More aggressive */
 .author__avatar {
     text-align: center !important;
     display: block !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    width: 100% !important;
 }
 
 .author__avatar img {
     margin-left: auto !important;
     margin-right: auto !important;
+    display: block !important;
+    float: none !important;
+    clear: both !important;
+}
+
+.sidebar .author__avatar {
+    text-align: center !important;
+    margin: 0 auto !important;
+}
+
+.sidebar .author__avatar img {
+    margin: 0 auto !important;
     display: block !important;
 }
 
