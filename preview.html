@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Theme Preview - Academic Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/custom-aesthetics.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+        }
+        .preview-container {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+        }
+        .sidebar-preview {
+            width: 300px;
+            background: var(--gradient-card);
+            border-right: 1px solid var(--border-light);
+            box-shadow: var(--shadow-xl);
+            border-radius: 0 var(--radius-3xl) var(--radius-3xl) 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .main-content-preview {
+            flex: 1;
+            padding: var(--space-xl);
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-container">
+        <!-- Premium Sidebar -->
+        <div class="sidebar sidebar-preview">
+            <div style="content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient-hero);"></div>
+            
+            <div class="author__avatar" style="margin: var(--space-xl) auto; width: 120px; height: 120px;">
+                <img src="images/Profile_Pic.png" alt="Profile Picture" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            
+            <div class="author__content">
+                <h3 class="author__name">Dr. Academic Researcher</h3>
+                <p class="author__bio">Assistant Professor of Computer Science<br>
+                Passionate about AI and Machine Learning</p>
+                
+                <div class="author__urls">
+                    <a href="#"><i>📧</i> Email</a>
+                    <a href="#"><i>🔗</i> LinkedIn</a>
+                    <a href="#"><i>📚</i> Google Scholar</a>
+                    <a href="#"><i>💻</i> GitHub</a>
+                </div>
+                
+                <button class="btn--inverse">Follow</button>
+            </div>
+        </div>
+
+        <!-- Premium Main Content -->
+        <div class="main-content-preview">
+            <div class="page__content">
+                <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem; background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: var(--space-xl);">Premium Academic Theme</h1>
+                
+                <!-- Sample Publication Card -->
+                <div class="card">
+                    <h2 class="archive__item-title">
+                        <a href="#">Advanced Machine Learning Techniques for Natural Language Processing</a>
+                    </h2>
+                    <div class="page__meta">
+                        <i>📅</i> Published in ICML 2024
+                        <i>📄</i> Conference Paper
+                    </div>
+                    <p class="archive__item-excerpt">
+                        This paper presents novel approaches to transformer architectures that achieve state-of-the-art performance on various NLP benchmarks. Our method shows significant improvements in both accuracy and computational efficiency.
+                    </p>
+                    <div class="page__taxonomy">
+                        <a href="#" class="btn">Machine Learning</a>
+                        <a href="#" class="btn">NLP</a>
+                        <a href="#" class="btn">Transformers</a>
+                    </div>
+                </div>
+
+                <!-- Sample News Item -->
+                <div class="card">
+                    <h2 class="archive__item-title">
+                        <a href="#">Recent Research Updates</a>
+                    </h2>
+                    <div class="news-item">
+                        <div class="news-icon">📢</div>
+                        <div class="news-content">
+                            <p><strong>July 2024:</strong> Our paper on "Efficient Neural Networks" was accepted at NeurIPS 2024!</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-icon">🏆</div>
+                        <div class="news-content">
+                            <p><strong>June 2024:</strong> Received the Outstanding Researcher Award from the AI Society.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Table -->
+                <div class="card">
+                    <h2 class="archive__item-title">Research Metrics</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Value</th>
+                                <th>Trend</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Publications</td>
+                                <td>25</td>
+                                <td>📈 +5 this year</td>
+                            </tr>
+                            <tr>
+                                <td>Citations</td>
+                                <td>1,250</td>
+                                <td>📈 +300 this year</td>
+                            </tr>
+                            <tr>
+                                <td>H-Index</td>
+                                <td>18</td>
+                                <td>📈 +2 this year</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Add click effect to buttons
+            const buttons = document.querySelectorAll('.btn, .btn--inverse');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

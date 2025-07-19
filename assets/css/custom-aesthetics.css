@@ -1,71 +1,56 @@
 /* ==========================================================================
-   PREMIUM ACADEMIC THEME
-   Enhanced by GitHub Copilot for sophisticated, modern styling
-   Updated: July 18, 2025 - Premium Design v3.0
-   Build timestamp: {{ site.time }}
+   SIMPLE ELEGANT GLASS THEME - LIGHT GREEN & CREAM WHITE
+   Clean override of all existing styles
    ========================================================================== */
 
-/* FORCE CACHE REFRESH - DO NOT REMOVE */
-/* Version: 3.0.{{ site.time | date: '%s' }} */
+/* FORCE CACHE REFRESH */
+/* Version: 4.0.{{ site.time | date: '%s' }} */
 
-/* Import premium fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/* Import clean fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
-/* ========================================================================== 
-   ELEGANT GLASS THEME - LIGHT GREEN & CREAM WHITE
-   ========================================================================== */
+/* FORCE LIGHT THEME - OVERRIDE ALL DARK MODE */
+* {
+  color-scheme: light !important;
+}
+
 :root {
-  /* Simple & Elegant Brand Colors */
-  --primary-color: #16a34a;         /* Fresh green */
-  --primary-dark: #15803d;          /* Darker green */
-  --primary-light: #22c55e;         /* Lighter green */
-  --secondary-color: #65a30d;       /* Lime green */
-  --accent-color: #84cc16;          /* Bright green accent */
-  
-  /* Clean Glass Gradients */
-  --gradient-primary: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
-  --gradient-secondary: linear-gradient(135deg, #65a30d 0%, #84cc16 100%);
-  --gradient-accent: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
-  --gradient-hero: linear-gradient(135deg, #16a34a 0%, #22c55e 50%, #84cc16 100%);
-  --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 250, 252, 0.7) 100%);
-  --gradient-glass: linear-gradient(145deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.6) 100%);
-  
-  /* Refined Typography Colors */
-  --text-primary: #1f2937;          /* Dark gray */
-  --text-secondary: #4b5563;        /* Medium gray */
-  --text-muted: #6b7280;           /* Light gray */
-  --text-light: #9ca3af;           /* Very light gray */
-  --text-accent: var(--primary-color);
-  
-  /* Cream & Glass Backgrounds */
-  --bg-primary: #fffef7;           /* Cream white */
-  --bg-secondary: #fefce8;         /* Light cream */
-  --bg-tertiary: #fef3c7;          /* Warmer cream */
-  --bg-accent: #ecfdf5;            /* Light green tint */
-  --bg-gradient: linear-gradient(135deg, #fffef7 0%, #fefce8 50%, #ecfdf5 100%);
-  
-  /* Simple Glass Borders & Shadows */
-  --border-color: rgba(22, 163, 74, 0.2);     /* Light green border */
-  --border-light: rgba(255, 255, 255, 0.3);   /* Glass border */
-  --border-accent: var(--primary-color);
-  
-  /* Elegant Glass Shadow System */
-  --shadow-xs: 0 1px 2px rgba(22, 163, 74, 0.05);
-  --shadow-sm: 0 2px 8px rgba(22, 163, 74, 0.1);
-  --shadow-md: 0 4px 16px rgba(22, 163, 74, 0.1);
-  --shadow-lg: 0 8px 32px rgba(22, 163, 74, 0.15);
-  --shadow-xl: 0 16px 64px rgba(22, 163, 74, 0.2);
-  --shadow-glass: 0 8px 32px rgba(22, 163, 74, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-  --shadow-glow: 0 0 20px rgba(22, 163, 74, 0.3);
-  
-  /* Clean spacing system */
-  --space-xs: 0.5rem;
-  --space-sm: 0.75rem;
-  --space-md: 1.25rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
-  --space-2xl: 4rem;
-  --space-3xl: 6rem;
+  /* Simple Colors */
+  --primary-color: #16a34a !important;
+  --primary-dark: #15803d !important;
+  --primary-light: #22c55e !important;
+  --text-primary: #1f2937 !important;
+  --text-secondary: #4b5563 !important;
+  --text-muted: #6b7280 !important;
+  --bg-primary: #fffef7 !important;
+  --bg-secondary: #fefce8 !important;
+  --border-color: rgba(22, 163, 74, 0.2) !important;
+  --shadow-sm: 0 2px 8px rgba(22, 163, 74, 0.1) !important;
+  --shadow-md: 0 4px 16px rgba(22, 163, 74, 0.1) !important;
+  --shadow-lg: 0 8px 32px rgba(22, 163, 74, 0.15) !important;
+}
+
+/* FORCE OVERRIDE BODY */
+body {
+  background: linear-gradient(135deg, #fffef7 0%, #fefce8 50%, #ecfdf5 100%) !important;
+  color: var(--text-primary) !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  line-height: 1.7 !important;
+  min-height: 100vh !important;
+}
+
+/* FORCE OVERRIDE NAVIGATION */
+.masthead {
+  background: rgba(255, 254, 247, 0.9) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border-bottom: 1px solid rgba(22, 163, 74, 0.2) !important;
+  box-shadow: 0 4px 16px rgba(22, 163, 74, 0.1) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  padding: 1rem 0 !important;
+}
   
   /* Border Radius System */
   --radius-xs: 0.125rem;
