@@ -1,6 +1,6 @@
-/* Force update - version 2.2 - Fix navbar visibility */
+/* Force update - version 2.3 - Fix experience page issues */
 body {
-    --emergency-fix-version: 2.2;
+    --emergency-fix-version: 2.3;
 }
 
 /* Ensure navbar appears above all content */
@@ -275,4 +275,30 @@ div[itemscope] > div {
 #main .archive:not(.sidebar),
 .layout--archive .page__content {
     text-align: left !important;
+}
+
+/* Force clean theme on all pages */
+.page,
+.archive,
+.page__content,
+#main {
+    background: var(--background-color, #fafafa) !important;
+    color: var(--text-color, #333) !important;
+}
+
+/* Ensure experience page uses our theme */
+.archive h1,
+.archive h2,
+.archive h3,
+.archive h4 {
+    color: var(--primary-color, #16a34a) !important;
+}
+
+/* Override any remaining old theme elements */
+* {
+    box-sizing: border-box !important;
+}
+
+body * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }
