@@ -126,15 +126,41 @@ body {
   display: none !important;
 }
 
-/* FORCE SIDEBAR STYLE */
+/* FORCE LAYOUT STRUCTURE */
+#main {
+  display: flex !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  padding: 2rem !important;
+  gap: 2rem !important;
+}
+
+/* FORCE SIDEBAR STYLE - ALWAYS VISIBLE */
 .sidebar {
   background: var(--bg-glass) !important;
   backdrop-filter: blur(15px) !important;
   -webkit-backdrop-filter: blur(15px) !important;
   border-right: 1px solid var(--border-color) !important;
   box-shadow: var(--shadow-lg) !important;
-  border-radius: 0 20px 20px 0 !important;
-  position: relative !important;
+  border-radius: 20px !important;
+  position: sticky !important;
+  top: 2rem !important;
+  height: fit-content !important;
+  min-width: 280px !important;
+  max-width: 320px !important;
+  flex-shrink: 0 !important;
+}
+
+.sidebar.sticky {
+  position: sticky !important;
+  top: 2rem !important;
+}
+
+/* FORCE MAIN CONTENT TO TAKE REMAINING SPACE */
+.page,
+.archive {
+  flex: 1 !important;
+  min-width: 0 !important;
 }
 
 .sidebar::before {
@@ -145,6 +171,7 @@ body {
   right: 0 !important;
   height: 3px !important;
   background: var(--primary-color) !important;
+  border-radius: 3px 3px 0 0 !important;
 }
 
 .author__avatar {
@@ -228,6 +255,50 @@ body {
   text-align: center !important;
 }
 
+/* FORCE AUTHOR PROFILE TO ALWAYS BE VISIBLE */
+.author-profile {
+  display: block !important;
+  visibility: visible !important;
+}
+
+.author__avatar,
+.author__content,
+.author__urls {
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* ENSURE SIDEBAR IS ALWAYS PRESENT */
+.sidebar {
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* FORCE ARCHIVE PAGES TO ALSO SHOW SIDEBAR */
+.archive {
+  background: var(--bg-glass) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border-radius: 20px !important;
+  padding: 3rem !important;
+  margin: 0 !important;
+  box-shadow: var(--shadow-lg) !important;
+  border: 1px solid var(--border-color) !important;
+  position: relative !important;
+  color: var(--text-primary) !important;
+}
+
+.archive::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 2px !important;
+  background: var(--primary-color) !important;
+  border-radius: 2px 2px 0 0 !important;
+}
+
 /* FORCE MAIN CONTENT STYLE */
 .page__content {
   background: var(--bg-glass) !important;
@@ -235,11 +306,17 @@ body {
   -webkit-backdrop-filter: blur(15px) !important;
   border-radius: 20px !important;
   padding: 3rem !important;
-  margin: 2rem !important;
+  margin: 0 !important;
   box-shadow: var(--shadow-lg) !important;
   border: 1px solid var(--border-color) !important;
   position: relative !important;
   color: var(--text-primary) !important;
+}
+
+.page__inner-wrap {
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .page__content::before {
@@ -250,6 +327,7 @@ body {
   right: 0 !important;
   height: 2px !important;
   background: var(--primary-color) !important;
+  border-radius: 2px 2px 0 0 !important;
 }
 
 /* FORCE HEADING STYLES */
@@ -346,6 +424,22 @@ table tr:hover {
 }
 
 /* RESPONSIVE */
+@media (max-width: 1024px) {
+  #main {
+    flex-direction: column !important;
+    padding: 1rem !important;
+  }
+  
+  .sidebar {
+    position: relative !important;
+    top: auto !important;
+    min-width: auto !important;
+    max-width: none !important;
+    border-radius: 20px !important;
+    margin-bottom: 2rem !important;
+  }
+}
+
 @media (max-width: 768px) {
   .masthead__inner-wrap {
     padding: 0 1rem !important;
@@ -360,15 +454,17 @@ table tr:hover {
     font-size: 0.85rem !important;
   }
   
-  .page__content {
+  .page__content,
+  .archive {
     padding: 2rem !important;
-    margin: 1rem !important;
+  }
+  
+  #main {
+    padding: 0.5rem !important;
   }
   
   .sidebar {
-    border-radius: 0 !important;
-    border-right: none !important;
-    border-bottom: 1px solid var(--border-color) !important;
+    margin-bottom: 1rem !important;
   }
 }
 
