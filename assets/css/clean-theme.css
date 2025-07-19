@@ -4,7 +4,7 @@
    ========================================================================== */
 
 /* FORCE CACHE REFRESH */
-/* Version: 4.7 - Clean Theme - Remove green icon background from profile picture */
+/* Version: 4.8 - Clean Theme - Completely remove all avatar background styling */
 
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
@@ -176,13 +176,16 @@ body {
 }
 
 .author__avatar {
-  background: transparent !important;
+  background: none !important;
+  background-color: transparent !important;
   padding: 0 !important;
-  box-shadow: var(--shadow-md) !important;
   margin: 2rem auto !important;
-  width: fit-content !important;
-  border-radius: 50% !important;
-  transition: all 0.3s ease !important;
+  width: 200px !important;
+  height: 200px !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transition: none !important;
 }
 
 .author__avatar img {
@@ -191,7 +194,8 @@ body {
   height: 200px !important;
   object-fit: cover !important;
   display: block !important;
-  border: 3px solid var(--primary-color) !important;
+  border: 2px solid var(--primary-color) !important;
+  box-shadow: var(--shadow-md) !important;
 }
 
 .author__content {
