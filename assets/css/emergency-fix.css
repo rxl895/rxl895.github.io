@@ -1,6 +1,6 @@
-/* Force update - version 2.8 - Make publication titles bold and improve formatting */
+/* Force update - version 2.9 - Fix publication titles with HTML strong tags */
 body {
-    --emergency-fix-version: 2.8;
+    --emergency-fix-version: 2.9;
 }
 
 /* ===== DARK/LIGHT THEME SYSTEM ===== */
@@ -415,19 +415,39 @@ div[itemscope] > div {
 .archive strong,
 .archive b,
 .publications strong,
-.publications b {
+.publications b,
+.page__content li strong,
+.archive li strong {
     font-weight: 700 !important;
     color: var(--primary-color) !important;
 }
 
 /* Publication paper titles (wrapped in ** **) */
 .page__content p strong,
-.archive p strong {
+.archive p strong,
+.page__content li strong,
+.archive li strong {
     font-weight: bold !important;
     color: var(--primary-color) !important;
     font-size: 1.1em !important;
     display: inline-block !important;
     margin-bottom: 0.25rem !important;
+}
+
+/* Force bold for any text between ** ** in publications */
+.page__content li,
+.archive li {
+    font-weight: normal !important;
+}
+
+/* Target text that should be bold in publication list items */
+.page__content ol li:before {
+    content: none !important;
+}
+
+.page__content ol li {
+    margin-bottom: 1.5rem !important;
+    line-height: 1.6 !important;
 }
 
 /* Publication section formatting */
