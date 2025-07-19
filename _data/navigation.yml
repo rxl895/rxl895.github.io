@@ -1,27 +1,17 @@
 main:
   - title: "Home"
     url: /
-
   - title: "Publications"
     url: /publications/
-
   - title: "Teaching"
-    url: /teaching/
-
+    url: /teaching/  
   - title: "Experience"
     url: /experience/
-
   - title: "Awards"
     url: /awards/
-
   - title: "Service"
     url: /service/
-
-  - title: "Students"
-    url: /students/
-
   - title: "Blogs"
     url: /blogs/
-
-  - title: "News" 
+  - title: "News"
     url: /news/
