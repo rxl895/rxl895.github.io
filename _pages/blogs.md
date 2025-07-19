@@ -11,13 +11,23 @@ Welcome to my blog section where I share insights, experiences, and thoughts on 
 
 ## Recent Posts
 
-### Coming Soon
-I'm currently working on setting up this blog section. Check back soon for posts on:
+### [My Journey into Explainable AI: Bridging the Gap Between Performance and Interpretability](/blogs/explainable-ai-journey/)
+*January 15, 2025*
 
-* **AI and Machine Learning**: Latest trends, research insights, and practical applications
-* **Software Development**: Best practices, tutorials, and project experiences  
-* **Research Journey**: Academic experiences, paper reviews, and research methodologies
-* **Personal Growth**: Life lessons, career insights, and professional development
+Exploring the challenges and opportunities in making AI systems more interpretable while maintaining high performance. I share insights from my research and practical applications at Volkswagen IT, covering counterfactual explanations, attention mechanisms, and the connection between fairness and interpretability.
+
+**Tags**: AI, Machine Learning, Explainable AI, Research
+
+---
+
+## Upcoming Topics
+
+I'm currently working on posts about:
+
+* **LORA-based LLM Optimization**: Techniques for efficient fine-tuning and their impact on model interpretability
+* **Symbolic Reasoning in Modern AI**: Bridging classical AI approaches with deep learning
+* **Fairness Evaluation Frameworks**: Practical approaches to measuring and improving AI fairness  
+* **Academic to Industry Transition**: Lessons learned from research to real-world applications
 * **Technology Reviews**: Tools, frameworks, and technologies I'm exploring
 
 ---
