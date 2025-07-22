@@ -1,4 +1,4 @@
-// Mobile-Only Navigation JavaScript
+// Mobile-Only Navigation JavaScript - Simple Clean Theme
 // This script only affects mobile devices and doesn't interfere with desktop navigation
 
 (function() {
@@ -46,11 +46,11 @@
     const navHeader = document.createElement('div');
     navHeader.className = 'mobile-nav-header';
     
-    // Create brand/logo
+    // Create brand/logo with emoji
     const brand = document.createElement('a');
     brand.className = 'mobile-brand';
     brand.href = '/';
-    brand.textContent = document.title || 'My Site';
+    brand.innerHTML = '🍃 Ritika Lamba';
     
     // Create menu button
     const menuBtn = document.createElement('button');
@@ -77,50 +77,31 @@
     const menuItems = document.createElement('div');
     menuItems.className = 'mobile-menu-items';
     
-    // Get navigation links from existing navigation
-    const existingNav = document.querySelector('nav') || 
-                       document.querySelector('.navigation') ||
-                       document.querySelector('.main-nav') ||
-                       document.querySelector('.site-nav');
+    // Navigation items that match your site structure
+    const navigationItems = [
+      { text: 'Home', href: '/' },
+      { text: 'Publications', href: '/publications/' },
+      { text: 'Teaching', href: '/teaching/' },
+      { text: 'Experience', href: '/experience/' },
+      { text: 'Awards', href: '/awards/' },
+      { text: 'Blog', href: '/year-archive/' },
+      { text: 'News', href: '/news/' }
+    ];
     
-    if (existingNav) {
-      const links = existingNav.querySelectorAll('a');
-      links.forEach(link => {
-        const mobileLink = document.createElement('a');
-        mobileLink.className = 'mobile-menu-item';
-        mobileLink.href = link.href;
-        mobileLink.textContent = link.textContent.trim();
-        
-        // Mark current page
-        if (link.href === window.location.href) {
-          mobileLink.classList.add('active');
-        }
-        
-        menuItems.appendChild(mobileLink);
-      });
-    } else {
-      // Default navigation items if no existing nav found
-      const defaultItems = [
-        { text: 'Home', href: '/' },
-        { text: 'About', href: '/about/' },
-        { text: 'Publications', href: '/publications/' },
-        { text: 'Teaching', href: '/teaching/' },
-        { text: 'Blog', href: '/year-archive/' }
-      ];
+    navigationItems.forEach(item => {
+      const link = document.createElement('a');
+      link.className = 'mobile-menu-item';
+      link.href = item.href;
+      link.textContent = item.text;
       
-      defaultItems.forEach(item => {
-        const link = document.createElement('a');
-        link.className = 'mobile-menu-item';
-        link.href = item.href;
-        link.textContent = item.text;
-        
-        if (window.location.pathname === item.href) {
-          link.classList.add('active');
-        }
-        
-        menuItems.appendChild(link);
-      });
-    }
+      // Mark current page
+      if (window.location.pathname === item.href || 
+          (item.href !== '/' && window.location.pathname.includes(item.href.replace('/', '')))) {
+        link.classList.add('active');
+      }
+      
+      menuItems.appendChild(link);
+    });
     
     dropdown.appendChild(menuItems);
     
@@ -143,7 +124,10 @@
     if (!menuBtn || !dropdown) return;
     
     // Toggle menu
-    menuBtn.addEventListener('click', function() {
+    menuBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
       const isOpen = dropdown.classList.contains('show');
       
       if (isOpen) {
@@ -155,19 +139,21 @@
     
     // Close menu when clicking menu items
     menuItems.forEach(item => {
-      item.addEventListener('click', closeMobileMenu);
+      item.addEventListener('click', function() {
+        closeMobileMenu();
+      });
     });
     
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
-      if (!e.target.closest('.mobile-nav-wrapper')) {
+      if (!e.target.closest('.mobile-nav-wrapper') && dropdown.classList.contains('show')) {
         closeMobileMenu();
       }
     });
     
     // Handle escape key
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
+      if (e.key === 'Escape' && dropdown.classList.contains('show')) {
         closeMobileMenu();
       }
     });
@@ -177,7 +163,7 @@
       if (destroyMobileNavIfDesktop()) {
         return; // Exit if desktop
       }
-      if (!isMobile()) {
+      if (!isMobile() && dropdown.classList.contains('show')) {
         closeMobileMenu();
       }
     });
@@ -197,7 +183,7 @@
       // Focus first menu item for accessibility
       const firstItem = dropdown.querySelector('.mobile-menu-item');
       if (firstItem) {
-        setTimeout(() => firstItem.focus(), 100);
+        setTimeout(() => firstItem.focus(), 300);
       }
     }
   }

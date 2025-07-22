@@ -1,4 +1,4 @@
-/* Mobile-Only CSS Layout - No Desktop Changes */
+/* Mobile-Only CSS Layout - Simple Clean Theme */
 /* This file only applies to mobile devices and doesn't affect desktop styling */
 
 /* CRITICAL: Ensure desktop navigation remains untouched */
@@ -47,6 +47,449 @@
     display: block !important;
     visibility: visible !important;
     position: relative !important;
+  }
+}
+
+/* Mobile Theme - Simple & Clean Design */
+@media (max-width: 768px) {
+  /* Reset and base styles */
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Hide desktop navigation on mobile */
+  .masthead,
+  .greedy-nav,
+  .main-navigation,
+  .desktop-nav,
+  .site-nav,
+  .top-navbar {
+    display: none !important;
+  }
+  
+  /* Body styling for mobile */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #2d3748;
+    background: #f7fafc;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  /* Mobile Navigation Header */
+  .mobile-nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+  }
+  
+  /* Mobile Brand/Logo */
+  .mobile-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2d3748;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .mobile-brand:hover {
+    color: #16a34a;
+    text-decoration: none;
+  }
+  
+  /* Mobile Menu Button */
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #4a5568;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0;
+  }
+  
+  .mobile-menu-btn:hover {
+    background: #edf2f7;
+    border-color: #cbd5e0;
+    transform: translateY(-1px);
+  }
+  
+  .mobile-menu-btn:active {
+    transform: translateY(0);
+  }
+  
+  /* Hamburger Icon */
+  .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    width: 20px;
+    height: 16px;
+    justify-content: space-between;
+  }
+  
+  .hamburger-line {
+    width: 100%;
+    height: 2px;
+    background: #4a5568;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Animated hamburger when menu is open */
+  .mobile-menu-btn.active .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  
+  .mobile-menu-btn.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .mobile-menu-btn.active .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  
+  /* Mobile Menu Dropdown */
+  .mobile-menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 1rem;
+    right: 1rem;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    overflow: hidden;
+  }
+  
+  .mobile-menu-dropdown.show {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Mobile Menu Items */
+  .mobile-menu-items {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .mobile-menu-item {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  
+  .mobile-menu-item:last-child {
+    border-bottom: none;
+  }
+  
+  .mobile-menu-item:hover,
+  .mobile-menu-item:focus {
+    background: #f0fdf4;
+    color: #16a34a;
+    transform: translateX(4px);
+  }
+  
+  .mobile-menu-item.active {
+    background: #dcfce7;
+    color: #16a34a;
+    font-weight: 600;
+  }
+  
+  /* Main Content Area */
+  .main-content,
+  .page-content,
+  main,
+  article {
+    margin-top: 80px; /* Account for fixed header */
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+  
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    color: #1a202c;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #16a34a;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e2e8f0;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #4a5568;
+  }
+  
+  /* Links */
+  a {
+    color: #16a34a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  a:hover {
+    color: #15803d;
+    text-decoration: underline;
+  }
+  
+  /* Lists */
+  ul, ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    color: #4a5568;
+  }
+  
+  /* Images */
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Profile/Bio section */
+  .author-profile,
+  .sidebar {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+  }
+  
+  .author-avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: block;
+    border: 4px solid #16a34a;
+  }
+  
+  .author-content h3 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #1a202c;
+  }
+  
+  .author-bio {
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Buttons and Forms */
+  button,
+  .btn,
+  input[type="submit"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.75rem 1.5rem;
+    background: #16a34a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  button:hover,
+  .btn:hover {
+    background: #15803d;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.4);
+  }
+  
+  /* Input fields */
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+    transition: border-color 0.2s ease;
+  }
+  
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+    border-color: #16a34a;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+  }
+  
+  /* Cards and content blocks */
+  .card,
+  .post-preview,
+  .publication-item {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover,
+  .post-preview:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Footer */
+  footer,
+  .site-footer {
+    background: #1a202c;
+    color: #e2e8f0;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    margin-top: 3rem;
+  }
+  
+  footer a {
+    color: #16a34a;
+  }
+  
+  /* Utility classes */
+  .mobile-hidden {
+    display: none !important;
+  }
+  
+  .mobile-only {
+    display: block !important;
+  }
+  
+  .mobile-center {
+    text-align: center !important;
+  }
+  
+  .mobile-full-width {
+    width: 100% !important;
+  }
+  
+  .mobile-spacing {
+    margin-bottom: 2rem;
+  }
+  
+  /* Research interests styling */
+  .research-interests ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .research-interests li {
+    background: #f0fdf4;
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 4px solid #16a34a;
+    border-radius: 0 8px 8px 0;
+  }
+  
+  /* Social links */
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+    color: #4a5568;
+    transition: all 0.2s ease;
+  }
+  
+  .social-links a:hover {
+    background: #16a34a;
+    color: white;
+    transform: translateY(-2px);
   }
 }
 
