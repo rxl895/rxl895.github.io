@@ -206,29 +206,51 @@ body {
     padding-top: 70px !important; /* Less space needed for smaller navbar */
 }
 
-/* Mobile responsive */
+/* Mobile responsive - Enhanced */
 @media (max-width: 768px) {
     .top-navbar {
         padding: 6px 15px;
         gap: 12px;
         border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
     
     .top-navbar .nav-links {
         gap: 10px;
+        /* Mobile menu styles handled by mobile-responsive.css */
     }
     
     .top-navbar .nav-links a {
         padding: 4px 8px;
         font-size: 0.8rem;
+        /* Enhanced touch targets handled by mobile-responsive.css */
     }
     
     .top-navbar .logo {
         font-size: 0.9rem;
+        flex: 1;
     }
     
     body {
         padding-top: 60px !important; /* Adjusted for mobile */
+    }
+    
+    /* Ensure sidebar stacks properly on mobile */
+    .sidebar {
+        position: relative !important;
+        width: 100% !important;
+        margin-bottom: 1rem;
+    }
+    
+    /* Improve content readability on mobile */
+    .page__content {
+        padding: 1rem !important;
+        margin: 0.5rem !important;
+        font-size: 1rem;
+        line-height: 1.6;
     }
 }
 

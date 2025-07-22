@@ -13,27 +13,32 @@ layout: compress
 
   <body>
 
+    <!-- Skip link for screen readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Glass Top Navigation Bar -->
-    <nav class="top-navbar">
+    <nav class="top-navbar" role="navigation" aria-label="Main navigation">
       <a href="{{ site.url }}{{ site.baseurl }}/" class="logo">
         <div class="logo-icon">🍃</div>
         Ritika Lamba
       </a>
-      <div class="nav-links">
-        <a href="{{ site.url }}{{ site.baseurl }}/" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
-        <a href="{{ site.url }}{{ site.baseurl }}/publications/" {% if page.url contains "/publications" %}class="active"{% endif %}>Publications</a>
-        <a href="{{ site.url }}{{ site.baseurl }}/teaching/" {% if page.url contains "/teaching" %}class="active"{% endif %}>Teaching</a>
-        <a href="{{ site.url }}{{ site.baseurl }}/experience/" {% if page.url contains "/experience" %}class="active"{% endif %}>Experience</a>
-        <a href="{{ site.url }}{{ site.baseurl }}/awards/" {% if page.url contains "/awards" %}class="active"{% endif %}>Awards</a>
-        <a href="{{ site.url }}{{ site.baseurl }}/blogs/" {% if page.url contains "/blogs" %}class="active"{% endif %}>Blog</a>
-        <a href="{{ site.url }}{{ site.baseurl }}/news/" {% if page.url contains "/news" %}class="active"{% endif %}>News</a>
+      <div class="nav-links" role="menubar">
+        <a href="{{ site.url }}{{ site.baseurl }}/" {% if page.url == "/" %}class="active"{% endif %} role="menuitem">Home</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/publications/" {% if page.url contains "/publications" %}class="active"{% endif %} role="menuitem">Publications</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/teaching/" {% if page.url contains "/teaching" %}class="active"{% endif %} role="menuitem">Teaching</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/experience/" {% if page.url contains "/experience" %}class="active"{% endif %} role="menuitem">Experience</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/awards/" {% if page.url contains "/awards" %}class="active"{% endif %} role="menuitem">Awards</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/blogs/" {% if page.url contains "/blogs" %}class="active"{% endif %} role="menuitem">Blog</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/news/" {% if page.url contains "/news" %}class="active"{% endif %} role="menuitem">News</a>
       </div>
-      <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark/light theme">🌙</button>
     </nav>
 
     {% include browser-upgrade.html %}
 
-    {{ content }}
+    <main id="main-content" role="main">
+      {{ content }}
+    </main>
 
     <div class="page__footer">
       <footer>
