@@ -21,10 +21,43 @@
     return false;
   }
   
+  // FORCE REMOVE desktop navigation on mobile
+  function removeDesktopNavigationOnMobile() {
+    if (isMobile()) {
+      // Remove desktop navigation elements
+      const desktopNavs = document.querySelectorAll('.top-navbar, nav.top-navbar, .masthead, .greedy-nav, .main-navigation, .desktop-nav, .site-nav');
+      desktopNavs.forEach(nav => {
+        if (nav) {
+          nav.remove();
+        }
+      });
+      
+      // Remove skip link
+      const skipLinks = document.querySelectorAll('.skip-link, a[href="#main-content"]');
+      skipLinks.forEach(link => {
+        if (link) {
+          link.remove();
+        }
+      });
+      
+      // Force clean body styles
+      document.body.style.paddingTop = '0px';
+      document.body.style.background = '#f7fafc';
+      document.body.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
+      document.body.style.lineHeight = '1.6';
+      document.body.style.color = '#2d3748';
+      document.body.style.margin = '0';
+      document.body.style.padding = '0';
+    }
+  }
+  
   // Initialize mobile navigation
   function initMobileNav() {
     // Exit immediately if not mobile
     if (destroyMobileNavIfDesktop()) return;
+    
+    // FORCE REMOVE desktop navigation on mobile
+    removeDesktopNavigationOnMobile();
     
     // Create mobile navigation structure
     createMobileNavigation();
@@ -203,9 +236,24 @@
   
   // Initialize when DOM is ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMobileNav);
+    document.addEventListener('DOMContentLoaded', function() {
+      // Run immediately on load for mobile
+      if (isMobile()) {
+        removeDesktopNavigationOnMobile();
+      }
+      initMobileNav();
+    });
   } else {
+    // Run immediately if DOM already loaded
+    if (isMobile()) {
+      removeDesktopNavigationOnMobile();
+    }
     initMobileNav();
+  }
+  
+  // Also run as early as possible
+  if (isMobile()) {
+    removeDesktopNavigationOnMobile();
   }
   
   // Re-initialize on window resize (for orientation changes)
