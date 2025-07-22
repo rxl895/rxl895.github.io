@@ -323,6 +323,49 @@
     pointer-events: none !important;
   }
   
+  /* Hide skip link on desktop - only show when focused for accessibility */
+  .skip-link,
+  .skip-to-main,
+  a[href="#main"],
+  a[href="#content"],
+  a[href="#main-content"],
+  .screen-reader-text {
+    position: absolute !important;
+    left: -9999px !important;
+    top: -20px !important;
+    z-index: 999999 !important;
+    padding: 8px 16px !important;
+    background: #000 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    margin: -1px !important;
+  }
+  
+  /* Only show skip link when focused (for keyboard navigation) */
+  .skip-link:focus,
+  .skip-to-main:focus,
+  a[href="#main"]:focus,
+  a[href="#content"]:focus,
+  a[href="#main-content"]:focus,
+  .screen-reader-text:focus {
+    left: 6px !important;
+    top: 7px !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    clip: auto !important;
+    overflow: visible !important;
+    height: auto !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+  
   /* Ensure desktop navigation elements are visible */
   .main-navigation,
   .desktop-nav,
