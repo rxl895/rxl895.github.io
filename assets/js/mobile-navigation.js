@@ -80,8 +80,8 @@
     toggleButton.setAttribute('aria-expanded', 'true');
     toggleButton.innerHTML = '<span>✕</span>';
     
-    // Prevent body scroll when menu is open
-    document.body.style.overflow = 'hidden';
+    // Don't prevent body scroll - let content remain accessible
+    // document.body.style.overflow = 'hidden';
     
     // Focus first menu item for accessibility
     const firstLink = navLinks.querySelector('a');
@@ -100,8 +100,8 @@
       toggleButton.innerHTML = '<span>☰</span>';
     }
     
-    // Restore body scroll
-    document.body.style.overflow = '';
+    // Restore body scroll (commented out since we're not blocking it)
+    // document.body.style.overflow = '';
   }
 
   /**
