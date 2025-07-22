@@ -3,7 +3,31 @@
 
 /* CRITICAL: Ensure desktop navigation remains untouched */
 @media (min-width: 769px) {
-  /* Force hide all mobile elements */
+  /* URGENT: Force hide skip link with maximum specificity */
+  body .skip-link,
+  html body .skip-link,
+  body a.skip-link,
+  html body a.skip-link,
+  body a[href="#main-content"],
+  html body a[href="#main-content"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+  }
+  
+  /* Force hide mobile elements */
   .mobile-nav-wrapper,
   .mobile-menu-dropdown,
   .mobile-menu-btn,
