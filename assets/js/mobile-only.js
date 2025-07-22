@@ -4,14 +4,27 @@
 (function() {
   'use strict';
   
-  // Only run on mobile devices
+  // Only run on mobile devices - strict check
   function isMobile() {
     return window.innerWidth <= 768;
   }
   
+  // Destroy mobile navigation if on desktop
+  function destroyMobileNavIfDesktop() {
+    if (!isMobile()) {
+      const mobileNav = document.querySelector('.mobile-nav-wrapper');
+      if (mobileNav) {
+        mobileNav.remove();
+      }
+      return true; // Exit early
+    }
+    return false;
+  }
+  
   // Initialize mobile navigation
   function initMobileNav() {
-    if (!isMobile()) return;
+    // Exit immediately if not mobile
+    if (destroyMobileNavIfDesktop()) return;
     
     // Create mobile navigation structure
     createMobileNavigation();
@@ -161,6 +174,9 @@
     
     // Handle window resize
     window.addEventListener('resize', function() {
+      if (destroyMobileNavIfDesktop()) {
+        return; // Exit if desktop
+      }
       if (!isMobile()) {
         closeMobileMenu();
       }
@@ -209,6 +225,10 @@
   // Re-initialize on window resize (for orientation changes)
   window.addEventListener('resize', function() {
     setTimeout(function() {
+      if (destroyMobileNavIfDesktop()) {
+        return; // Exit if desktop
+      }
+      
       if (isMobile() && !document.querySelector('.mobile-nav-wrapper')) {
         initMobileNav();
       }

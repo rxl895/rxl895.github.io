@@ -1,6 +1,42 @@
 /* Mobile-Only CSS Layout - No Desktop Changes */
 /* This file only applies to mobile devices and doesn't affect desktop styling */
 
+/* CRITICAL: Ensure desktop navigation remains untouched */
+@media (min-width: 769px) {
+  /* Force hide all mobile elements */
+  .mobile-nav-wrapper,
+  .mobile-menu-dropdown,
+  .mobile-menu-btn,
+  .mobile-only {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  
+  /* Preserve all desktop navigation elements */
+  .main-navigation,
+  .desktop-nav,
+  .site-nav,
+  .masthead,
+  .greedy-nav,
+  .page__hero,
+  nav {
+    display: block !important;
+    visibility: visible !important;
+    position: relative !important;
+  }
+}
+
+/* CRITICAL: Hide mobile navigation on desktop and tablet */
+@media (min-width: 769px) {
+  .mobile-nav-wrapper,
+  .mobile-menu-dropdown,
+  .mobile-menu-btn,
+  .mobile-only {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
 /* Mobile Navigation - Clean Implementation */
 @media (max-width: 768px) {
   /* Mobile Navigation Container */
@@ -254,16 +290,47 @@
   .mobile-nav-wrapper,
   .mobile-menu-dropdown,
   .mobile-menu-btn {
-    display: none;
+    display: none !important;
+    visibility: hidden !important;
+  }
+  
+  /* Ensure desktop navigation is visible on tablets */
+  .main-navigation,
+  .desktop-nav,
+  .site-nav,
+  .masthead,
+  .greedy-nav {
+    display: block !important;
+    visibility: visible !important;
   }
 }
 
-/* Desktop (1025px+) - No changes to existing desktop styles */
-@media (min-width: 1025px) {
+/* Desktop (769px+) - FORCE hide mobile elements and preserve desktop navigation */
+@media (min-width: 769px) {
   .mobile-nav-wrapper,
   .mobile-menu-dropdown,
   .mobile-menu-btn,
   .mobile-only {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+  }
+  
+  /* Ensure desktop navigation elements are visible */
+  .main-navigation,
+  .desktop-nav,
+  .site-nav,
+  .masthead,
+  .greedy-nav,
+  nav {
+    display: block !important;
+    visibility: visible !important;
   }
 }
