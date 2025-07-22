@@ -70,6 +70,12 @@
     } else {
       openMobileMenu(navLinks, toggleButton);
     }
+    
+    // Force remove any potential overlay styles
+    navLinks.style.backgroundColor = '#ffffff';
+    navLinks.style.backdropFilter = 'none';
+    navLinks.style.opacity = '1';
+    navLinks.style.visibility = 'visible';
   }
 
   /**
@@ -79,6 +85,20 @@
     navLinks.classList.add('mobile-menu-open');
     toggleButton.setAttribute('aria-expanded', 'true');
     toggleButton.innerHTML = '<span>✕</span>';
+    
+    // Force correct styling immediately
+    navLinks.style.display = 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.backgroundColor = '#ffffff';
+    navLinks.style.backdropFilter = 'none';
+    navLinks.style.border = '2px solid #16a34a';
+    navLinks.style.borderRadius = '8px';
+    navLinks.style.padding = '1rem';
+    navLinks.style.boxShadow = '0 4px 16px rgba(22, 163, 74, 0.2)';
+    navLinks.style.zIndex = '999';
+    navLinks.style.position = 'relative';
+    navLinks.style.opacity = '1';
+    navLinks.style.visibility = 'visible';
     
     // Don't prevent body scroll - let content remain accessible
     // document.body.style.overflow = 'hidden';
