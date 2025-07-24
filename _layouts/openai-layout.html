@@ -50,74 +50,80 @@ layout: compress
     <!-- Main Container -->
     <div class="main-container">
       
-      <!-- Profile Section -->
-      <section class="content-section">
-        <div class="profile-section">
-          <!-- Profile Card -->
-          <div class="profile-card">
-            <img src="{{ author.avatar | default: '/images/Profile_Pic.png' }}" alt="{{ author.name }}" class="profile-image">
-            <h2 class="profile-name">{{ author.name | default: "Ritika Lamba" }}</h2>
-            <p class="profile-title">{{ author.bio | default: "MS Student at Case Western Reserve University (CWRU)" }}</p>
-            
-            <div class="social-links">
-              {% if author.email %}
-                <a href="mailto:{{ author.email }}" class="social-link">
-                  <i class="fas fa-envelope"></i>
-                  Email
-                </a>
-              {% endif %}
+      <!-- Profile Section (only on home page) -->
+      {% if page.url == "/" %}
+        <section class="content-section">
+          <div class="profile-section">
+            <!-- Profile Card -->
+            <div class="profile-card">
+              <img src="{{ author.avatar | default: '/images/Profile_Pic.png' }}" alt="{{ author.name }}" class="profile-image">
+              <h2 class="profile-name">{{ author.name | default: "Ritika Lamba" }}</h2>
+              <p class="profile-title">{{ author.bio | default: "MS Student at Case Western Reserve University (CWRU)" }}</p>
               
-              {% if author.googlescholar %}
-                <a href="{{ author.googlescholar }}" class="social-link">
-                  <i class="ai ai-google-scholar"></i>
-                  Google Scholar
-                </a>
-              {% endif %}
-              
-              {% if author.orcid %}
-                <a href="{{ author.orcid }}" class="social-link">
-                  <i class="ai ai-orcid"></i>
-                  ORCID
-                </a>
-              {% endif %}
-              
-              {% if author.github %}
-                <a href="https://github.com/{{ author.github }}" class="social-link">
-                  <i class="fab fa-github"></i>
-                  GitHub
-                </a>
-              {% endif %}
-              
-              {% if author.linkedin %}
-                <a href="{{ author.linkedin }}" class="social-link">
-                  <i class="fab fa-linkedin"></i>
-                  LinkedIn
-                </a>
-              {% endif %}
+              <div class="social-links">
+                {% if author.email %}
+                  <a href="mailto:{{ author.email }}" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                    Email
+                  </a>
+                {% endif %}
+                
+                {% if author.googlescholar %}
+                  <a href="{{ author.googlescholar }}" class="social-link">
+                    <i class="ai ai-google-scholar"></i>
+                    Google Scholar
+                  </a>
+                {% endif %}
+                
+                {% if author.orcid %}
+                  <a href="{{ author.orcid }}" class="social-link">
+                    <i class="ai ai-orcid"></i>
+                    ORCID
+                  </a>
+                {% endif %}
+                
+                {% if author.github %}
+                  <a href="https://github.com/{{ author.github }}" class="social-link">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                  </a>
+                {% endif %}
+                
+                {% if author.linkedin %}
+                  <a href="{{ author.linkedin }}" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                  </a>
+                {% endif %}
+              </div>
             </div>
-          </div>
 
-          <!-- Main Content -->
-          <div class="content-main">
-            <!-- Hero Section (only on home page) -->
-            {% if page.url == "/" %}
+            <!-- Main Content -->
+            <div class="content-main">
+              <!-- Hero Section -->
               <div class="hero">
                 <h1>{{ page.title | default: "Ritika Lamba" }}</h1>
                 <p>{{ page.excerpt | default: "I am an LLM-focused ML Engineer with a strong foundation in scalable AI infrastructure, fairness, and interpretability." }}</p>
               </div>
-            {% else %}
-              <div class="content-section">
-                <h1>{{ page.title }}</h1>
-              </div>
-            {% endif %}
 
-            <!-- Page Content -->
-            <div class="content-section">
+              <!-- Page Content -->
+              <div class="content-section">
+                {{ content }}
+              </div>
+            </div>
+          </div>
+        </section>
+      {% else %}
+        <!-- Simple layout for other pages -->
+        <section class="content-section">
+          <div class="content-main" style="max-width: 900px; margin: 0 auto;">
+            <h1>{{ page.title }}</h1>
+            <div class="page-content">
               {{ content }}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      {% endif %}
     </div>
 
     <!-- Footer -->
