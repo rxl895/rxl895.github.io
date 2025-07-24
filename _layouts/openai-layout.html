@@ -15,7 +15,32 @@ layout: compress
     <!-- Navigation -->
     <nav class="openai-nav">
       <div class="nav-container">
-        <a href="{{ base_path }}/" class="nav-brand">Ritika Lamba</a>
+        <div class="nav-brand-section">
+          <a href="{{ base_path }}/" class="nav-brand">Ritika Lamba</a>
+          <div class="nav-social-icons">
+            {% if author.email %}
+              <a href="mailto:{{ author.email }}" class="nav-social-icon" title="Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+            {% endif %}
+            {% if author.linkedin %}
+              <a href="https://www.linkedin.com/in/{{ author.linkedin }}" class="nav-social-icon" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            {% endif %}
+            {% if author.googlescholar %}
+              <a href="{{ author.googlescholar }}" class="nav-social-icon" title="Google Scholar">
+                <i class="ai ai-google-scholar"></i>
+              </a>
+            {% endif %}
+            <a href="https://medium.com/@ritikalamba" class="nav-social-icon" title="Medium">
+              <i class="fab fa-medium"></i>
+            </a>
+            <a href="https://instagram.com/ritika.lamba" class="nav-social-icon" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
         
         <div class="nav-links">
           <a href="{{ base_path }}/" class="nav-link">Home</a>

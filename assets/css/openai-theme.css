@@ -275,6 +275,12 @@ img {
   height: 64px;
 }
 
+.nav-brand-section {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
 .nav-brand {
   display: flex;
   align-items: center;
@@ -288,6 +294,33 @@ img {
 .nav-brand:hover {
   color: var(--accent-green);
   text-decoration: none;
+}
+
+.nav-social-icons {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.nav-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.nav-social-icon:hover {
+  background: var(--accent-green-hover);
+  color: var(--accent-green);
+  text-decoration: none;
+  transform: translateY(-1px);
 }
 
 .nav-links {
@@ -831,6 +864,20 @@ ol li strong {
   
   .nav-links { display: none; }
   .mobile-menu-btn { display: block; }
+  
+  .nav-brand-section {
+    gap: var(--spacing-md);
+  }
+  
+  .nav-social-icons {
+    gap: var(--spacing-xs);
+  }
+  
+  .nav-social-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
   
   .profile-section {
     grid-template-columns: 1fr;
