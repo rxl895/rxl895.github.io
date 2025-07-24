@@ -50,8 +50,9 @@ layout: compress
     <!-- Main Container -->
     <div class="main-container">
       
-      <!-- Profile Section (only on home page) -->
-      {% if page.url == "/" %}
+      <!-- Profile Section (home page and main content pages) -->
+      {% assign sidebar_pages = "/publications/,/experience/,/teaching/,/awards/,/blogs/" | split: "," %}
+      {% if page.url == "/" or sidebar_pages contains page.url %}
         <section class="content-section">
           <div class="profile-section">
             <!-- Profile Card -->
@@ -100,13 +101,19 @@ layout: compress
 
             <!-- Main Content -->
             <div class="content-main">
-              <!-- Hero Section -->
-              <div class="hero">
-                <div class="hero-content">
-                  <h1>{{ page.title | default: "Ritika Lamba" }}</h1>
-                  <p>{{ page.excerpt | default: "I am an LLM-focused ML Engineer with a strong foundation in scalable AI infrastructure, fairness, and interpretability. I have industry-proven experience building distributed systems at Volkswagen IT, paired with academic research in explainable AI, LORA-based LLM optimization, and symbolic reasoning." }}</p>
+              <!-- Hero Section (only on home page) -->
+              {% if page.url == "/" %}
+                <div class="hero">
+                  <div class="hero-content">
+                    <h1>{{ page.title | default: "Ritika Lamba" }}</h1>
+                    <p>{{ page.excerpt | default: "I am an LLM-focused ML Engineer with a strong foundation in scalable AI infrastructure, fairness, and interpretability. I have industry-proven experience building distributed systems at Volkswagen IT, paired with academic research in explainable AI, LORA-based LLM optimization, and symbolic reasoning." }}</p>
+                  </div>
                 </div>
-              </div>
+              {% else %}
+                <div class="content-section">
+                  <h1>{{ page.title }}</h1>
+                </div>
+              {% endif %}
 
               <!-- Page Content -->
               <div class="content-section">
