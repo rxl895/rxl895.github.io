@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: openai-layout
 title: "Ritika Lamba"
 permalink: /
 author_profile: true
