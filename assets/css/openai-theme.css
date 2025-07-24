@@ -509,6 +509,103 @@ img {
   background: var(--pure-white);
 }
 
+/* Page-specific styles */
+.page-content {
+  max-width: none;
+}
+
+.page-content h1 {
+  border-bottom: 2px solid var(--accent-green);
+  padding-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.page-content h2 {
+  color: var(--primary-black);
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+}
+
+.page-content h3 {
+  color: var(--text-primary);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Publication list styling */
+.publications-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.publication-item {
+  padding: var(--spacing-lg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  background: var(--pure-white);
+  transition: all 0.2s ease;
+}
+
+.publication-item:hover {
+  border-color: var(--accent-green);
+  box-shadow: var(--shadow-md);
+}
+
+.publication-title {
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--primary-black);
+  margin-bottom: var(--spacing-sm);
+}
+
+.publication-authors {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.publication-venue {
+  color: var(--accent-green);
+  font-weight: var(--font-weight-medium);
+  font-size: 0.9rem;
+}
+
+/* Experience timeline */
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.experience-item {
+  position: relative;
+  padding-left: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  border-left: 3px solid var(--accent-green);
+  background: var(--accent-green-subtle);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.experience-title {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--primary-black);
+  margin-bottom: var(--spacing-xs);
+}
+
+.experience-company {
+  color: var(--accent-green);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-sm);
+}
+
+.experience-duration {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-md);
+}
+
 /* Research Interests */
 .research-item {
   padding: var(--spacing-lg);

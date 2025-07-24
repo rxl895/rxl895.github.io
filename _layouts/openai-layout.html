@@ -12,6 +12,41 @@ layout: compress
   </head>
 
   <body>
+    <!-- Navigation -->
+    <nav class="openai-nav">
+      <div class="nav-container">
+        <a href="{{ base_path }}/" class="nav-brand">Ritika Lamba</a>
+        
+        <div class="nav-links">
+          <a href="{{ base_path }}/" class="nav-link">Home</a>
+          <a href="{{ base_path }}/publications/" class="nav-link">Publications</a>
+          <a href="{{ base_path }}/experience/" class="nav-link">Experience</a>
+          <a href="{{ base_path }}/teaching/" class="nav-link">Teaching</a>
+          <a href="{{ base_path }}/awards/" class="nav-link">Awards</a>
+          <a href="{{ base_path }}/blogs/" class="nav-link">Blog</a>
+        </div>
+        
+        <button class="mobile-menu-btn">
+          <div class="hamburger">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+          </div>
+        </button>
+      </div>
+      
+      <div class="mobile-menu">
+        <div class="mobile-menu-links">
+          <a href="{{ base_path }}/" class="mobile-menu-link">Home</a>
+          <a href="{{ base_path }}/publications/" class="mobile-menu-link">Publications</a>
+          <a href="{{ base_path }}/experience/" class="mobile-menu-link">Experience</a>
+          <a href="{{ base_path }}/teaching/" class="mobile-menu-link">Teaching</a>
+          <a href="{{ base_path }}/awards/" class="mobile-menu-link">Awards</a>
+          <a href="{{ base_path }}/blogs/" class="mobile-menu-link">Blog</a>
+        </div>
+      </div>
+    </nav>
+
     <!-- Main Container -->
     <div class="main-container">
       
@@ -64,40 +99,22 @@ layout: compress
 
           <!-- Main Content -->
           <div class="content-main">
-            <!-- Hero Section -->
-            <div class="hero">
-              <h1>{{ page.title | default: "Ritika Lamba" }}</h1>
-              <p>I am an LLM-focused ML Engineer with a strong foundation in scalable AI infrastructure, fairness, and interpretability. I have industry-proven experience building distributed systems at Volkswagen IT, paired with academic research in explainable AI, LORA-based LLM optimization, and symbolic reasoning.</p>
-            </div>
+            <!-- Hero Section (only on home page) -->
+            {% if page.url == "/" %}
+              <div class="hero">
+                <h1>{{ page.title | default: "Ritika Lamba" }}</h1>
+                <p>{{ page.excerpt | default: "I am an LLM-focused ML Engineer with a strong foundation in scalable AI infrastructure, fairness, and interpretability." }}</p>
+              </div>
+            {% else %}
+              <div class="content-section">
+                <h1>{{ page.title }}</h1>
+              </div>
+            {% endif %}
 
             <!-- Page Content -->
             <div class="content-section">
               {{ content }}
             </div>
-
-            <!-- Research Interests (if on home page) -->
-            {% if page.url == "/" %}
-              <div class="content-section">
-                <h2>Research Interests</h2>
-                <p>I am broadly interested in:</p>
-                
-                <div class="research-item">
-                  <strong>Automated reasoning, large language models (LLMs), trustworthy AI, explainable AI (XAI)</strong>
-                </div>
-                
-                <div class="research-item">
-                  <strong>Symbolic and statistical interpretability, counterfactual explanations</strong>
-                </div>
-                
-                <div class="research-item">
-                  <strong>Fairness in AI, static and program analysis, SMT-based verification, program synthesis</strong>
-                </div>
-                
-                <div class="research-item">
-                  <strong>Causal reasoning, NLP emotion tagging, and multi-label consistency evaluation</strong>
-                </div>
-              </div>
-            {% endif %}
           </div>
         </div>
       </section>
