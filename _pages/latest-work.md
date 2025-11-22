@@ -17,7 +17,9 @@ I am proud to share my recent work on the FAIRLinked project with the SDLE (Sola
 - Published as an open-source Python package on PyPI
 
 **Resources:**
+- **GitHub Repository:** [https://github.com/cwru-sdle/FAIRLinked](https://github.com/cwru-sdle/FAIRLinked)
 - **PyPI Package:** [https://pypi.org/project/FAIRLinked/](https://pypi.org/project/FAIRLinked/)
+- **JOSA A Paper:** Available in the GitHub repository
 - Install via pip: `pip install FAIRLinked`
 
 For more details or collaboration inquiries, please contact me.
