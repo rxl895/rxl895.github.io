@@ -14,5 +14,10 @@ I am proud to share my recent work on the FAIRLinked project with the SDLE (Sola
 - Focused on FAIR (Findable, Accessible, Interoperable, Reusable) data principles
 - Developed tools and workflows for research data management
 - Collaborated with a multidisciplinary team to advance open science
+- Published as an open-source Python package on PyPI
+
+**Resources:**
+- **PyPI Package:** [https://pypi.org/project/FAIRLinked/](https://pypi.org/project/FAIRLinked/)
+- Install via pip: `pip install FAIRLinked`
 
 For more details or collaboration inquiries, please contact me.
