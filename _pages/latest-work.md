@@ -1,7 +1,8 @@
 ---
 title: "Latest Work"
 permalink: /latest-work/
-layout: page
+author_profile: true
+layout: single
 ---
 
 # Latest Work
