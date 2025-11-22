@@ -15,3 +15,5 @@ main:
     url: /blogs/
   - title: "News"
     url: /news/
+  - title: "Latest Work"
+    url: /latest-work/
