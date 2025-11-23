@@ -1,6 +1,8 @@
 main:
   - title: "Home"
     url: /
+  - title: "Latest Work"
+    url: /latest-work/
   - title: "Publications"
     url: /publications/
   - title: "Teaching"
@@ -15,5 +17,3 @@ main:
     url: /blogs/
   - title: "News"
     url: /news/
-  - title: "Latest Work"
-    url: /latest-work/
