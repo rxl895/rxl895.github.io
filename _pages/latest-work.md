@@ -1,8 +1,8 @@
 ---
+layout: archive
 title: "Latest Work"
 permalink: /latest-work/
 author_profile: true
-layout: single
 ---
 
 # Latest Work
